@@ -81,7 +81,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - RGB OFF
   - RGB ON
-  - {t: '$$mdi:transfer$$', type: trans}
+  - '&new_macro'
   - {t: '$$mdi:transfer$$', type: trans}
   - RGB EFF
   - $$mdi:volume-off$$
