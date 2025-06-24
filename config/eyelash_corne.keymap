@@ -132,6 +132,16 @@
             bindings = <&kp AMPERSAND>;
             key-positions = <25 24>;
         };
+
+        ru_comma {
+            bindings = <&kp COMMA>;
+            key-positions = <37 38>;
+        };
+
+        ru_dot {
+            bindings = <&kp DOT>;
+            key-positions = <38 39>;
+        };
     };
 
     keymap {
