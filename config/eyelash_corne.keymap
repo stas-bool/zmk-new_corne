@@ -152,13 +152,13 @@
         lower_layer {
             display-name = "LOWER";
             bindings = <
-&kp TILDE   &kp N1           &kp N2       &kp N3    &kp HOME    &kp N5                                            &mmv MOVE_UP                     &kp PLUS      &kp N7  &kp N8  &kp N9  &kp N0    &kp BSPC
-&kp GRAVE   &kp EXCLAMATION  &kp AT_SIGN  &kp HASH  &kp DOLLAR  &kp PERCENT                       &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp MINUS     &kp N4  &kp N5  &kp N6  &kp FSLH  &kp PG_UP
-&kp LSHIFT  &trans           &trans       &trans    &kp END     &trans       &kp LG(C_BRI_MIN)                    &mmv MOVE_DOWN                   &kp ASTERISK  &kp N1  &kp N2  &kp N3  &kp RET   &kp PG_DN
-                                          &mo 3     &trans      &trans                                                                             &trans        &trans  &trans
+&kp TILDE   &kp N1           &kp N2       &kp N3    &kp HOME    &kp N5                                    &mmv MOVE_UP                     &kp PLUS      &kp N7  &kp N8  &kp N9  &kp N0    &kp BSPC
+&kp GRAVE   &kp EXCLAMATION  &kp AT_SIGN  &kp HASH  &kp DOLLAR  &kp PERCENT               &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp MINUS     &kp N4  &kp N5  &kp N6  &kp FSLH  &kp PG_UP
+&kp LSHIFT  &trans           &trans       &trans    &kp END     &trans       &kp C_PIP                    &mmv MOVE_DOWN                   &kp ASTERISK  &kp N1  &kp N2  &kp N3  &kp RET   &kp PG_DN
+                                          &mo 3     &trans      &trans                                                                     &trans        &trans  &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp LG(C_BRIGHTNESS_INC) LG(C_BRIGHTNESS_DEC)>;
+            sensor-bindings = <&inc_dec_kp C_BRIGHTNESS_INC C_BRIGHTNESS_DEC>;
         };
 
         raise {
