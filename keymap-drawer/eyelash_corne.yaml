@@ -84,7 +84,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - END
   - {t: '$$mdi:transfer$$', type: trans}
-  - BRI MIN
+  - Gui+BRI MIN
   - {t: '$$mdi:menu-down$$', s: '$$mdi:mouse$$'}
   - '*'
   - {t: '1', s: '!'}
