@@ -150,10 +150,10 @@
         default_layer {
             display-name = "DEFAULT";
             bindings = <
-&kp ESC              &kp Q  &kp W               &kp E           &kp R               &kp T                                  &kp UP                &kp Y      &kp U            &kp I               &kp O                &kp P     &kp LEFT_BRACKET
-&kp TAB              &kp A  &mt LEFT_CONTROL S  &mt LEFT_ALT D  &mt LEFT_COMMAND F  &kp G                        &kp LEFT  &kp ENTER  &kp RIGHT  &kp H      &mt RIGHT_GUI J  &mt RIGHT_ALT K     &mt RIGHT_CONTROL L  &kp SEMI  &kp SQT
-&mt LSHIFT CAPSLOCK  &kp Z  &kp X               &kp C           &kp V               &kp B          &kp C_MUTE              &kp DOWN              &kp N      &kp M            &kp COMMA           &kp DOT              &kp FSLH  &kp RIGHT_BRACKET
-                                                &kp LGUI        &mo 2               &mt LCTRL RET                                                &kp SPACE  &mo 1            &mt RALT RIGHT_GUI
+&kp ESC              &kp Q  &kp W               &kp E           &kp R               &kp T                                  &kp UP                &kp Y        &kp U            &kp I               &kp O                &kp P     &kp LEFT_BRACKET
+&kp TAB              &kp A  &mt LEFT_CONTROL S  &mt LEFT_ALT D  &mt LEFT_COMMAND F  &kp G                        &kp LEFT  &kp ENTER  &kp RIGHT  &kp H        &mt RIGHT_GUI J  &mt RIGHT_ALT K     &mt RIGHT_CONTROL L  &kp SEMI  &kp SQT
+&mt LSHIFT CAPSLOCK  &kp Z  &kp X               &kp C           &kp V               &kp B          &kp C_MUTE              &kp DOWN              &kp N        &kp M            &kp COMMA           &kp DOT              &kp FSLH  &kp RIGHT_BRACKET
+                                                &kp LGUI        &mo 2               &mt LCTRL RET                                                &lt 4 SPACE  &mo 1            &mt RALT RIGHT_GUI
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
@@ -180,6 +180,7 @@
             >;
 
             label = "raise";
+            sensor-bindings = <&scroll_encoder>;
         };
 
         adjust {
@@ -189,6 +190,17 @@
 &trans  &bt BT_CLR_ALL   &bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3                   &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp LEFT         &kp DOWN         &kp UP           &kp RIGHT        &kp HOME  &kp PG_UP
 &trans  &rgb_ug RGB_OFF  &rgb_ug RGB_ON  &trans        &trans        &rgb_ug RGB_EFF  &kp C_MUTE                    &mmv MOVE_DOWN                   &rgb_ug RGB_EFR  &rgb_ug RGB_SPI  &rgb_ug RGB_BRI  &rgb_ug RGB_BRD  &kp END   &kp PG_DN
                                          &trans        &trans        &trans                                                                          &kp INS          &kp DEL          &trans
+            >;
+
+            sensor-bindings = <&scroll_encoder>;
+        };
+
+        signs {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans          &trans  &trans  &trans                &trans                 &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans            &trans          &trans  &trans  &kp COMMA             &kp DOT                &trans  &trans
+                        &trans  &trans  &trans                                    &trans  &trans  &trans
             >;
 
             sensor-bindings = <&scroll_encoder>;
