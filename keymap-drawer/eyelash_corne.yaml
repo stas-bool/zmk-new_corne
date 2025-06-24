@@ -1,7 +1,7 @@
 layout: {zmk_keyboard: eyelash_corne}
 layers:
   QWERTY:
-  - $$mdi:keyboard-tab$$
+  - $$mdi:keyboard-esc$$
   - Q
   - W
   - E
@@ -14,7 +14,7 @@ layers:
   - O
   - P
   - {t: '$$mdi:backspace$$', type: backspace}
-  - '&td0'
+  - $$mdi:keyboard-tab$$
   - A
   - S
   - D
@@ -29,7 +29,7 @@ layers:
   - L
   - {t: ;, s: ':'}
   - {t: '''', s: '"'}
-  - $$mdi:apple-keyboard-control$$
+  - $$mdi:apple-keyboard-shift$$
   - Z
   - X
   - C
@@ -196,3 +196,22 @@ layers:
   - {type: held alternate}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
+combos:
+- p: [2, 3]
+  k: +
+  l: [QWERTY]
+- p: [3, 4]
+  k: {t: '-', s: _}
+  l: [QWERTY]
+- p: [4, 5]
+  k: (
+  l: [QWERTY]
+- p: [7, 8]
+  k: )
+  l: [QWERTY]
+- p: [8, 9]
+  k: _
+  l: [QWERTY]
+- p: [9, 10]
+  k: '|'
+  l: [QWERTY]
