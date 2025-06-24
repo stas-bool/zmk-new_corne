@@ -13,20 +13,20 @@ layers:
   - I
   - O
   - P
-  - {t: '$$mdi:backspace$$', type: backspace}
+  - {t: '[', s: '{'}
   - $$mdi:keyboard-tab$$
   - A
-  - S
-  - D
-  - F
+  - {t: S, h: '$$mdi:apple-keyboard-control$$'}
+  - {t: D, h: '$$mdi:apple-keyboard-option$$'}
+  - {t: F, h: '$$mdi:apple-keyboard-command$$'}
   - G
   - $$mdi:arrow-left-bold$$
   - {t: '$$mdi:keyboard-return$$', type: enter}
   - $$mdi:arrow-right-bold$$
   - H
-  - J
-  - K
-  - L
+  - {t: J, h: RIGHT GUI}
+  - {t: K, h: '$$mdi:apple-keyboard-option$$'}
+  - {t: L, h: '$$mdi:apple-keyboard-control$$'}
   - {t: ;, s: ':'}
   - {t: '''', s: '"'}
   - $$mdi:apple-keyboard-shift$$
@@ -42,7 +42,7 @@ layers:
   - {t: ',', s: <}
   - {t: ., s: '>'}
   - {t: /, s: '?'}
-  - $$mdi:keyboard-esc$$
+  - {t: ']', s: '}'}
   - LGUI
   - NUMBER
   - {t: '$$mdi:keyboard-space$$', h: Fn}
@@ -199,7 +199,6 @@ layers:
 combos:
 - p: [2, 3]
   k: +
-  l: [QWERTY]
 - p: [3, 4]
   k: {t: '-', s: _}
   l: [QWERTY]
@@ -214,4 +213,28 @@ combos:
   l: [QWERTY]
 - p: [9, 10]
   k: '|'
+  l: [QWERTY]
+- p: [0, 13]
+  k: '~'
+  l: [QWERTY]
+- p: [13, 28]
+  k: {t: '`', s: '~'}
+  l: [QWERTY]
+- p: [16, 17]
+  k: '"'
+  l: [QWERTY]
+- p: [17, 18]
+  k: {t: '[', s: '{'}
+  l: [QWERTY]
+- p: [33, 32]
+  k: '{'
+  l: [QWERTY]
+- p: [22, 23]
+  k: {t: ']', s: '}'}
+  l: [QWERTY]
+- p: [23, 24]
+  k: <
+  l: [QWERTY]
+- p: [36, 37]
+  k: '}'
   l: [QWERTY]
