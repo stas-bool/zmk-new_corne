@@ -50,16 +50,56 @@
         tap-ms = <100>;
     };
 
+    combos {
+        compatible = "zmk,combos";
+
+        plus {
+            bindings = <&kp PLUS>;
+            key-positions = <2 3>;
+            layers = <0>;
+        };
+
+        mius {
+            bindings = <&kp MINUS>;
+            key-positions = <3 4>;
+            layers = <0>;
+        };
+
+        l_bracket {
+            bindings = <&kp LEFT_PARENTHESIS>;
+            key-positions = <4 5>;
+            layers = <0>;
+        };
+
+        r_parenthesis {
+            bindings = <&kp RIGHT_PARENTHESIS>;
+            key-positions = <7 8>;
+            layers = <0>;
+        };
+
+        Underscore {
+            bindings = <&kp UNDERSCORE>;
+            key-positions = <8 9>;
+            layers = <0>;
+        };
+
+        pipe {
+            bindings = <&kp PIPE>;
+            key-positions = <9 10>;
+            layers = <0>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
             display-name = "QWERTY";
             bindings = <
-&kp TAB    &kp Q  &kp W  &kp E     &kp R  &kp T                               &kp UP                &kp Y        &kp U  &kp I      &kp O    &kp P     &kp BSPC
-&td0       &kp A  &kp S  &kp D     &kp F  &kp G                     &kp LEFT  &kp ENTER  &kp RIGHT  &kp H        &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
-&kp LCTRL  &kp Z  &kp X  &kp C     &kp V  &kp B        &kp SPACE              &kp DOWN              &kp N        &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp ESC
-                         &kp LGUI  &mo 1  &lt 3 SPACE                                               &lt 3 ENTER  &mo 2  &kp RALT
+&kp ESC     &kp Q  &kp W  &kp E     &kp R  &kp T                               &kp UP                &kp Y        &kp U  &kp I      &kp O    &kp P     &kp BSPC
+&kp TAB     &kp A  &kp S  &kp D     &kp F  &kp G                     &kp LEFT  &kp ENTER  &kp RIGHT  &kp H        &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
+&kp LSHIFT  &kp Z  &kp X  &kp C     &kp V  &kp B        &kp SPACE              &kp DOWN              &kp N        &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp ESC
+                          &kp LGUI  &mo 1  &lt 3 SPACE                                               &lt 3 ENTER  &mo 2  &kp RALT
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
