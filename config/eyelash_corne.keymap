@@ -55,92 +55,98 @@
         plus {
             bindings = <&kp PLUS>;
             key-positions = <2 3>;
+            timeout-ms = <20>;
         };
 
         mius {
             bindings = <&kp MINUS>;
             key-positions = <3 4>;
+            timeout-ms = <20>;
         };
 
         l_bracket {
             bindings = <&kp LEFT_PARENTHESIS>;
             key-positions = <4 5>;
+            timeout-ms = <20>;
         };
 
         r_parenthesis {
             bindings = <&kp RIGHT_PARENTHESIS>;
             key-positions = <7 8>;
+            timeout-ms = <20>;
         };
 
         Underscore {
             bindings = <&kp UNDERSCORE>;
             key-positions = <8 9>;
+            timeout-ms = <20>;
         };
 
         pipe {
             bindings = <&kp PIPE>;
             key-positions = <9 10>;
             layers = <0>;
+            timeout-ms = <20>;
         };
 
         tilde {
             bindings = <&kp TILDE>;
             key-positions = <0 13>;
+            timeout-ms = <20>;
         };
 
         backtick {
             bindings = <&kp GRAVE>;
             key-positions = <13 28>;
+            timeout-ms = <20>;
         };
 
         Quote_Double {
             bindings = <&kp DOUBLE_QUOTES>;
             key-positions = <16 17>;
+            timeout-ms = <20>;
         };
 
         Left_Bracket {
             bindings = <&kp LEFT_BRACKET>;
             key-positions = <17 18>;
+            timeout-ms = <20>;
         };
 
         Left_Brace {
             bindings = <&kp LEFT_BRACE>;
             key-positions = <33 32>;
+            timeout-ms = <20>;
         };
 
         Right_Bracket {
             bindings = <&kp RIGHT_BRACKET>;
             key-positions = <22 23>;
+            timeout-ms = <20>;
         };
 
         Apostrophe {
             bindings = <&kp APOSTROPHE>;
             key-positions = <23 24>;
+            timeout-ms = <20>;
         };
 
         Right_Brace {
             bindings = <&kp RIGHT_BRACE>;
             key-positions = <36 37>;
+            timeout-ms = <20>;
         };
 
         caret {
             bindings = <&kp CARET>;
             key-positions = <15 16>;
+            timeout-ms = <20>;
         };
 
-        Ampersand {
-            bindings = <&kp AMPERSAND>;
+        Dollar {
+            bindings = <&kp DOLLAR>;
             key-positions = <25 24>;
-        };
-
-        ru_comma {
-            bindings = <&kp COMMA>;
-            key-positions = <37 38>;
-        };
-
-        ru_dot {
-            bindings = <&kp DOT>;
-            key-positions = <38 39>;
+            timeout-ms = <20>;
         };
     };
 
@@ -150,10 +156,10 @@
         default_layer {
             display-name = "DEFAULT";
             bindings = <
-&kp ESC              &kp Q  &kp W               &kp E           &kp R               &kp T                                  &kp UP                &kp Y        &kp U            &kp I               &kp O                &kp P     &kp LEFT_BRACKET
-&kp TAB              &kp A  &mt LEFT_CONTROL S  &mt LEFT_ALT D  &mt LEFT_COMMAND F  &kp G                        &kp LEFT  &kp ENTER  &kp RIGHT  &kp H        &mt RIGHT_GUI J  &mt RIGHT_ALT K     &mt RIGHT_CONTROL L  &kp SEMI  &kp SQT
-&mt LSHIFT CAPSLOCK  &kp Z  &kp X               &kp C           &kp V               &kp B          &kp C_MUTE              &kp DOWN              &kp N        &kp M            &kp COMMA           &kp DOT              &kp FSLH  &kp RIGHT_BRACKET
-                                                &kp LGUI        &mo 2               &mt LCTRL RET                                                &lt 4 SPACE  &mo 1            &mt RALT RIGHT_GUI
+&kp ESC              &kp Q  &kp W               &kp E           &kp R               &kp T                                  &kp UP                &kp Y                    &kp U            &kp I               &kp O                &kp P     &kp LEFT_BRACKET
+&kp TAB              &kp A  &mt LEFT_CONTROL S  &mt LEFT_ALT D  &mt LEFT_COMMAND F  &kp G                        &kp LEFT  &kp ENTER  &kp RIGHT  &kp H                    &mt RIGHT_GUI J  &mt RIGHT_ALT K     &mt RIGHT_CONTROL L  &kp SEMI  &kp SQT
+&mt LSHIFT CAPSLOCK  &kp Z  &kp X               &kp C           &kp V               &kp B          &kp C_MUTE              &kp DOWN              &kp N                    &kp M            &kp COMMA           &kp DOT              &kp FSLH  &kp RIGHT_BRACKET
+                                                &kp LGUI        &mo 2               &mt LCTRL RET                                                &mt RIGHT_CONTROL SPACE  &mo 1            &mt RALT RIGHT_GUI
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
@@ -190,17 +196,6 @@
 &trans  &bt BT_CLR_ALL   &bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3                   &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp LEFT         &kp DOWN         &kp UP           &kp RIGHT        &kp HOME  &kp PG_UP
 &trans  &rgb_ug RGB_OFF  &rgb_ug RGB_ON  &trans        &trans        &rgb_ug RGB_EFF  &kp C_MUTE                    &mmv MOVE_DOWN                   &rgb_ug RGB_EFR  &rgb_ug RGB_SPI  &rgb_ug RGB_BRI  &rgb_ug RGB_BRD  &kp END   &kp PG_DN
                                          &trans        &trans        &trans                                                                          &kp INS          &kp DEL          &trans
-            >;
-
-            sensor-bindings = <&scroll_encoder>;
-        };
-
-        signs {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans          &trans  &trans  &trans                &trans                 &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans            &trans          &trans  &trans  &kp COMMA             &kp DOT                &trans  &trans
-                        &trans  &trans  &trans                                    &trans  &trans  &trans
             >;
 
             sensor-bindings = <&scroll_encoder>;
