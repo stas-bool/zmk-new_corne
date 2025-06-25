@@ -91,13 +91,13 @@
 
         tilde {
             bindings = <&kp TILDE>;
-            key-positions = <0 13>;
+            key-positions = <1 2>;
             timeout-ms = <20>;
         };
 
         backtick {
             bindings = <&kp GRAVE>;
-            key-positions = <13 28>;
+            key-positions = <14 15>;
             timeout-ms = <20>;
         };
 
@@ -148,6 +148,18 @@
             key-positions = <25 24>;
             timeout-ms = <20>;
         };
+
+        left_upper_corner {
+            bindings = <&kp LA(LC(LG(E)))>;
+            key-positions = <19 6>;
+            layers = <2>;
+        };
+
+        right_upper_corner {
+            bindings = <&kp LA(LC(LG(T)))>;
+            key-positions = <6 21>;
+            layers = <2>;
+        };
     };
 
     keymap {
@@ -168,9 +180,9 @@
         lower_layer {
             display-name = "LOWER";
             bindings = <
-&kp TILDE   &kp N1           &kp N2       &kp N3    &kp HOME    &kp N5                                    &mmv MOVE_UP                     &kp PLUS      &kp N7  &kp N8  &kp N9  &kp N0    &kp BSPC
-&kp GRAVE   &kp EXCLAMATION  &kp AT_SIGN  &kp HASH  &kp DOLLAR  &kp PERCENT               &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp MINUS     &kp N4  &kp N5  &kp N6  &kp FSLH  &kp PG_UP
-&kp LSHIFT  &trans           &trans       &trans    &kp END     &trans       &kp C_PIP                    &mmv MOVE_DOWN                   &kp ASTERISK  &kp N1  &kp N2  &kp N3  &kp RET   &kp PG_DN
+&kp TILDE   &trans           &trans       &trans    &kp HOME    &trans                                    &mmv MOVE_UP                     &kp PLUS      &kp N7  &kp N8  &kp N9  &kp N0         &kp PAGE_UP
+&kp GRAVE   &kp EXCLAMATION  &kp AT_SIGN  &kp HASH  &kp DOLLAR  &kp PERCENT               &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp MINUS     &kp N4  &kp N5  &kp N6  &kp BACKSPACE  &kp DEL
+&kp LSHIFT  &trans           &trans       &trans    &kp END     &trans       &kp C_PIP                    &mmv MOVE_DOWN                   &kp ASTERISK  &kp N1  &kp N2  &kp N3  &kp SLASH      &kp PG_DN
                                           &mo 3     &trans      &trans                                                                     &trans        &trans  &trans
             >;
 
@@ -179,10 +191,10 @@
 
         raise {
             bindings = <
-&kp F16  &kp F1   &kp F2   &kp F3   &kp F4   &kp F5                     &trans          &trans    &trans    &trans        &trans     &kp DELETE  &kp BACKSPACE
-&kp F17  &kp F6   &kp F7   &kp F8   &kp F9   &kp F10            &trans  &trans  &trans  &kp LEFT  &kp DOWN  &kp UP_ARROW  &kp RIGHT  &trans      &trans
-&kp F18  &kp F11  &kp F12  &kp F13  &kp F14  &kp F15  &trans            &trans          &trans    &kp LGUI  &kp LALT      &kp LCTRL  &kp LSHFT   &trans
-                           &trans   &trans   &trans                                     &trans    &trans    &trans
+&kp F16  &kp F1   &kp F2   &kp F3   &kp F4   &kp F5                                     &kp LA(LC(LG(E)))                                  &trans     &trans    &trans        &trans     &trans         &trans
+&kp F17  &kp F6   &kp F7   &kp F8   &kp F9   &kp F10            &kp LC(LA(LEFT_ARROW))  &kp LA(LC(LG(UP_ARROW)))  &kp LC(LA(RIGHT_ARROW))  &kp LEFT   &kp DOWN  &kp UP_ARROW  &kp RIGHT  &kp BACKSPACE  &kp DELETE
+&kp F18  &kp F11  &kp F12  &kp F13  &kp F14  &kp F15  &trans                            &kp LA(LC(LG(F)))                                  &kp GLOBE  &kp LGUI  &kp LALT      &kp LCTRL  &kp LSHFT      &trans
+                           &trans   &trans   &trans                                                                                        &trans     &trans    &trans
             >;
 
             label = "raise";
