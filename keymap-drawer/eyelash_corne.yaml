@@ -43,12 +43,12 @@ layers:
   - {t: ., s: '>'}
   - {t: /, s: '?'}
   - {t: ']', s: '}'}
-  - LGUI
+  - $$mdi:apple-keyboard-control$$
   - raise
-  - {t: '$$mdi:keyboard-return$$', h: '$$mdi:apple-keyboard-control$$'}
+  - {t: '$$mdi:keyboard-return$$', h: '$$mdi:apple-keyboard-command$$'}
   - {t: '$$mdi:keyboard-space$$', h: '$$mdi:apple-keyboard-control$$'}
   - LOWER
-  - {t: RIGHT GUI, h: '$$mdi:apple-keyboard-option$$'}
+  - {t: '$$mdi:backspace$$', h: '$$mdi:apple-keyboard-option$$'}
   LOWER:
   - '~'
   - {t: '$$mdi:transfer$$', type: trans}
@@ -210,9 +210,9 @@ combos:
 - p: [9, 10]
   k: '|'
   l: [DEFAULT]
-- p: [1, 2]
-  k: '~'
 - p: [14, 15]
+  k: '~'
+- p: [2, 1]
   k: {t: '`', s: '~'}
 - p: [16, 17]
   k: '"'
@@ -230,9 +230,3 @@ combos:
   k: ^
 - p: [25, 24]
   k: $
-- p: [19, 6]
-  k: Alt+Ctl+Gui+E
-  l: [raise]
-- p: [6, 21]
-  k: Alt+Ctl+Gui+T
-  l: [raise]
