@@ -91,13 +91,13 @@
 
         tilde {
             bindings = <&kp TILDE>;
-            key-positions = <1 2>;
+            key-positions = <14 15>;
             timeout-ms = <20>;
         };
 
         backtick {
             bindings = <&kp GRAVE>;
-            key-positions = <14 15>;
+            key-positions = <2 1>;
             timeout-ms = <20>;
         };
 
@@ -144,21 +144,9 @@
         };
 
         Dollar {
-            bindings = <&kp DOLLAR>;
+            bindings = <&kp DLLR>;
             key-positions = <25 24>;
             timeout-ms = <20>;
-        };
-
-        left_upper_corner {
-            bindings = <&kp LA(LC(LG(E)))>;
-            key-positions = <19 6>;
-            layers = <2>;
-        };
-
-        right_upper_corner {
-            bindings = <&kp LA(LC(LG(T)))>;
-            key-positions = <6 21>;
-            layers = <2>;
         };
     };
 
@@ -168,10 +156,10 @@
         default_layer {
             display-name = "DEFAULT";
             bindings = <
-&kp ESC              &kp Q  &kp W               &kp E           &kp R               &kp T                                  &kp UP                &kp Y                    &kp U            &kp I               &kp O                &kp P     &kp LEFT_BRACKET
-&kp TAB              &kp A  &mt LEFT_CONTROL S  &mt LEFT_ALT D  &mt LEFT_COMMAND F  &kp G                        &kp LEFT  &kp ENTER  &kp RIGHT  &kp H                    &mt RIGHT_GUI J  &mt RIGHT_ALT K     &mt RIGHT_CONTROL L  &kp SEMI  &kp SQT
-&mt LSHIFT CAPSLOCK  &kp Z  &kp X               &kp C           &kp V               &kp B          &kp C_MUTE              &kp DOWN              &kp N                    &kp M            &kp COMMA           &kp DOT              &kp FSLH  &kp RIGHT_BRACKET
-                                                &kp LGUI        &mo 2               &mt LCTRL RET                                                &mt RIGHT_CONTROL SPACE  &mo 1            &mt RALT RIGHT_GUI
+&kp ESC              &kp Q  &kp W               &kp E             &kp R               &kp T                                     &kp UP                &kp Y                    &kp U            &kp I               &kp O                &kp P     &kp LEFT_BRACKET
+&kp TAB              &kp A  &mt LEFT_CONTROL S  &mt LEFT_ALT D    &mt LEFT_COMMAND F  &kp G                           &kp LEFT  &kp ENTER  &kp RIGHT  &kp H                    &mt RIGHT_GUI J  &mt RIGHT_ALT K     &mt RIGHT_CONTROL L  &kp SEMI  &kp SQT
+&mt LSHIFT CAPSLOCK  &kp Z  &kp X               &kp C             &kp V               &kp B             &kp C_MUTE              &kp DOWN              &kp N                    &kp M            &kp COMMA           &kp DOT              &kp FSLH  &kp RIGHT_BRACKET
+                                                &kp LEFT_CONTROL  &mo 2               &mt LEFT_GUI RET                                                &mt RIGHT_CONTROL SPACE  &mo 1            &mt RALT BACKSPACE
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
