@@ -2,10 +2,10 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-      # Additional modules containing boards/shields/custom code can be listed here as well.
-      # See:
-      # - https://zmk.dev/docs/features/modules
-      # - https://docs.zephyrproject.org/3.5.0/develop/west/manifest.html#projects
+    - name: dsifry
+      url-base: https://github.com/dsifry
+    - name: urob
+      url-base: https://github.com/urob
   projects:
     - name: eyelash_corne
       url: https://github.com/a741725193/zmk-new_corne
@@ -14,5 +14,23 @@ manifest:
       remote: zmkfirmware
       revision: main
       import: app/west.yml
+    - name: nice-view-mod
+      remote: dsifry 
+      revision: main             
+    - name: zmk-helpers
+      remote: urob
+      revision: main
+    - name: zmk-adaptive-key
+      remote: urob
+      revision: main
+    - name: zmk-auto-layer
+      remote: urob
+      revision: main
+    - name: zmk-leader-key
+      remote: urob
+      revision: main
+    - name: zmk-tri-state
+      remote: urob
+      revision: main
   self:
     path: config

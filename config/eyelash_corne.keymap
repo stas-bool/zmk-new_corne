@@ -1,31 +1,121 @@
-#define ZMK_POINTING_DEFAULT_MOVE_VAL 1200  // 600
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 25   // 10
+// Настройки указателя мыши
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 600  // Скорость движения курсора
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 25   // Скорость прокрутки
 
+// Подключение необходимых библиотек и определений
 #include <input/processors.dtsi>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 #include <behaviors.dtsi>
+#include <behaviors/num_word.dtsi> 
+
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/pointing.h>
 #include <dt-bindings/zmk/rgb.h>
 
+// Пользовательские хелперы и определения
+#include "zmk-helpers/helper.h"
+#include "eyelash_corne/keymap.h"
+
+// Определение слоев клавиатуры
+#define BASE 0      // Основной слой
+#define SYM 1       // Слой символов
+#define NUM 2       // Цифровой слой
+#define SYSTEM 3    // Системный слой
+#define GAME 4      // Игровой слой
+
+// Определение групп клавиш для удобства настройки
+#define KEYS_L LT0 LT1 LT2 LT3 LT4 LM0 LM1 LM2 LM3 LM4 LB0 LB1 LB2 LB3 LB4  // Левая половина
+#define KEYS_R RT0 RT1 RT2 RT3 RT4 RM0 RM1 RM2 RM3 RM4 RB0 RB1 RB2 RB3 RB4  // Правая половина
+#define THUMBS LH2 LH1 LH0 RH0 RH1 RH2   // Клавиши для больших пальцев
+
+// Время для быстрого нажатия в миллисекундах
+#define QUICK_TAP_MS 175
+
+// Определение комбинации копирования/вырезания: копировать по одному нажатию, вырезать по двойному
+ZMK_TAP_DANCE(copy_cut, bindings = <&kp LG(C)>, <&kp LG(X)>;
+              tapping-term-ms = <150>;)
+              
+// Комбинации клавиш для основных операций редактирования
+ZMK_COMBO(copy_cut, &copy_cut,   LB2 LB3, ALL)  // копировать/вырезать
+ZMK_COMBO(paste,    &kp LG(V), LB1 LB2, ALL)    // вставить
+ZMK_COMBO(undo ,    &kp LG(Z), LB4 LB3, ALL)    // отменить
+ZMK_COMBO(redo ,    &kp LG(LS(Z)), LB4 LB1, ALL) // повторить
+ZMK_COMBO(escape ,  &kp ESC, LT5 LT4, ALL)      // escape
+
+// Переключение слоев по двойному нажатию
+ZMK_TAP_DANCE(layerdance, bindings = <&tog 4>, <&tog 5>;
+              tapping-term-ms = <200>;)
+              
+// Вызов лаунчера: RALT по одному нажатию, Alt+Space по двойному
+ZMK_TAP_DANCE(laucher, bindings = <&kp RALT>, <&kp LA(SPACE)>;
+              tapping-term-ms = <200>;)
+
+// Настройка поведения клавиш home-row mods для левой руки
+ZMK_HOLD_TAP(hml,
+    flavor = "balanced";
+    tapping-term-ms = <200>;
+    require-prior-idle-ms = <QUICK_TAP_MS>;
+    hold-trigger-key-positions = <KEYS_R THUMBS>;
+    hold-trigger-on-release;
+    bindings = <&kp>, <&kp>;
+)
+
+// Настройка поведения клавиш home-row mods для правой руки
+ZMK_HOLD_TAP(hmr,
+    flavor = "balanced";
+    tapping-term-ms = <200>;
+    require-prior-idle-ms = <QUICK_TAP_MS>;
+    hold-trigger-key-positions = <KEYS_L THUMBS>;
+    hold-trigger-on-release;
+    bindings = <&kp>, <&kp>;
+)
+
+// Настройка масштабирования движения мыши
 &mmv_input_listener { input-processors = <&zip_xy_scaler 2 1>; };
 
+// Настройка масштабирования прокрутки
 &msc_input_listener { input-processors = <&zip_scroll_scaler 2 1>; };
 
+// Определение умного цифрового слоя
+#define SMART_NUM &smart_num NUM 0
+ZMK_HOLD_TAP(smart_num, bindings = <&mo>, <&num_dance>; flavor = "balanced";
+             tapping-term-ms = <200>; quick-tap-ms = <QUICK_TAP_MS>;)
+ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
+              tapping-term-ms = <200>;)
+
+// Настройки прокрутки мыши
 &msc {
-    acceleration-exponent = <1>;      // 0
-    time-to-max-speed-ms = <100>;       // 300
-    delay-ms = <0>;                   // 0
+    acceleration-exponent = <1>;      // Экспонента ускорения
+    time-to-max-speed-ms = <100>;    // Время до максимальной скорости
+    delay-ms = <0>;                  // Задержка
 };
 
+// Настройки движения мыши
 &mmv {
-    time-to-max-speed-ms = <500>;
-    acceleration-exponent = <1>;
-    trigger-period-ms = <16>;
+    time-to-max-speed-ms = <500>;    // Время до максимальной скорости
+    acceleration-exponent = <1>;      // Экспонента ускорения
+    trigger-period-ms = <16>;        // Период срабатывания
 };
+
 
 / {
+    // Определение условных слоев
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+
+        // Активация системного слоя при одновременном включении SYM и NUM
+        adjust_layer {
+            if-layers = <SYM NUM>;
+            then-layer = <SYSTEM>;
+        };
+    };
+
+    // Определение пользовательских поведений клавиш
     behaviors {
+        // Tap Dance для Shift/Caps Lock
         td0: td0 {
             compatible = "zmk,behavior-tap-dance";
             display-name = "Shift/Caps Lock Tap Dance";
@@ -34,50 +124,122 @@
         };
     };
 
+    // Настройка энкодера для управления RGB подсветкой
     rgb_encoder: rgb_encoder {
         compatible = "zmk,behavior-sensor-rotate";
         #sensor-binding-cells = <0>;
         bindings = <&rgb_ug RGB_BRI>, <&rgb_ug RGB_BRD>;
     };
 
+    // Настройка энкодера для прокрутки
     scroll_encoder: scroll_encoder {
         compatible = "zmk,behavior-sensor-rotate";
         #sensor-binding-cells = <0>;
         bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
-
         tap-ms = <100>;
     };
 
-    macros {
-        ide_db: new_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LCTRL>,
-                <&macro_tap>,
-                <&kp TAB>,
-                <&macro_tap>,
-                <&kp D>,
-                <&macro_release>,
-                <&kp LCTRL>;
+    // Определение комбинаций клавиш
+    combos {
+        compatible = "zmk,combos";
 
-            label = "NEW_MACRO";
+        // Комбинация для backspace
+        backspace {
+            bindings = <&kp BACKSPACE>;
+            key-positions = <RM1 RM2>;
         };
     };
 
+    // Определение макросов
+    macros {
+    };
+
+    // Определение раскладки клавиатуры
     keymap {
         compatible = "zmk,keymap";
 
+        // Основной слой - стандартная раскладка с модификаторами
         default_layer {
-            display-name = "QWERTY";
+            display-name = "Base";
             bindings = <
-&kp TAB    &kp Q  &kp W  &kp E     &kp R  &kp T                               &kp UP                &kp Y        &kp U  &kp I      &kp O    &kp P     &kp BSPC
-&td0       &kp A  &kp S  &kp D     &kp F  &kp G                     &kp LEFT  &kp ENTER  &kp RIGHT  &kp H        &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
-&kp LCTRL  &kp Z  &kp X  &kp C     &kp V  &kp B        &kp SPACE              &kp DOWN              &kp N        &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp ESC
-                         &kp LGUI  &mo 0  &lt 0 SPACE                                               &lt 0 ENTER  &mo 0  &kp RALT
+//╭──────────────┬──────────┬──────────┬──────────┬──────────┬──────────╮                                          ╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮
+    &kp TAB       &kp Q      &kp W      &kp E      &kp R      &kp T                                                 &kp Y      &kp U      &kp I      &kp O      &kp P      &kp BSPC
+//├──────────────┼──────────┼──────────┼──────────┼──────────┼──────────┤                                          ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
+    &td0          &hml LSHFT A &hml LCTRL S &hml LALT D &hml LGUI F &kp G                                          &kp H      &hmr LGUI J &hmr LALT K &hmr LCTRL L &hmr LSHFT SEMI &kp SQT
+//├──────────────┼──────────┼──────────┼──────────┼──────────┼──────────┼──────────╮                    ╭──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
+    &kp LCTRL     &kp Z      &kp X      &kp C      &kp V      &kp B      &kp C_MUTE                     &kp DOWN   &kp N      &kp M      &kp COMMA  &kp DOT    &kp FSLH   &to 4
+//╰──────────────┴──────────┴──────────┼──────────┼──────────┼──────────┼──────────┤                    ├──────────┼──────────┼──────────┼──────────┴──────────┴──────────┴──────────╯
+                                        &kp LGUI   &mo SYM    &kp SPACE  &kp LEFT                        &kp RIGHT  &kp ENTER  SMART_NUM  &laucher
+//                                      ╰──────────┴──────────┴──────────┴──────────╯                    ╰──────────┴──────────┴──────────┴──────────╯
             >;
+            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
+        };
 
+        // Слой символов - специальные символы и управление мышью
+        sym_layer {
+            display-name = "Symbols";
+            bindings = <
+//╭──────────────┬──────────┬──────────┬──────────┬──────────┬──────────╮                                          ╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮
+    &kp ESC       &kp EXCL   &kp AT     &kp POUND  &kp DOLLAR &kp PERCENT                                          &kp CARET  &kp AMPS   &kp ASTRK  &kp SLASH  &kp BSLH   &kp DEL
+//├──────────────┼──────────┼──────────┼──────────┼──────────┼──────────┤                                          ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
+    &kp LT        &kp LPAR   &kp LBRC   &kp LBKT   &kp DOT    &kp COLON                                           &kp UNDER  &kp PIPE   &kp EQUAL  &kp SQT    &kp GRAVE  &kp PG_UP
+//├──────────────┼──────────┼──────────┼──────────┼──────────┼──────────┼──────────╮                    ╭──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
+    &kp GT        &kp RPAR   &kp RBRC   &kp RBKT   &kp COMMA  &kp SEMI   &kp C_MUTE                     &kp DOWN   &kp MINUS  &kp PLUS   &kp QMARK  &kp DQT    &kp TILDE  &trans
+//╰──────────────┴──────────┴──────────┼──────────┼──────────┼──────────┼──────────┤                    ├──────────┼──────────┼──────────┼──────────┴──────────┴──────────┴──────────╯
+                                        &trans     &trans     &trans     &mmv MOVE_LEFT                  &mmv MOVE_RIGHT &kp INS &kp DEL   &trans
+//                                      ╰──────────┴──────────┴──────────┴──────────╯                    ╰──────────┴──────────┴──────────┴──────────╯
+            >;
+            sensor-bindings = <&scroll_encoder>;
+        };
+
+        // Цифровой слой - цифры и управление мышью
+        num_layer {
+            display-name = "Num";
+            bindings = <
+//╭──────────────┬──────────┬──────────┬──────────┬──────────┬──────────╮                                          ╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮
+    &trans        &trans     &trans     &trans     &trans     &trans                                                &trans     &trans     &trans     &trans     &trans     &kp BSPC
+//├──────────────┼──────────┼──────────┼──────────┼──────────┼──────────┤                                          ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
+    &trans        &kp N1     &kp N2     &kp N3     &kp N4     &kp N5                                               &kp N6     &kp N7     &kp N8     &kp N9     &kp N0     &kp DEL
+//├──────────────┼──────────┼──────────┼──────────┼──────────┼──────────┼──────────╮                    ╭──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
+    &trans        &trans     &trans     &trans     &trans     &trans     &kp C_MUTE                     &kp DOWN   &trans     &trans     &trans     &trans     &trans     &trans
+//╰──────────────┴──────────┴──────────┼──────────┼──────────┼──────────┼──────────┤                    ├──────────┼──────────┼──────────┼──────────┴──────────┴──────────┴──────────╯
+                                        &trans     &trans     &trans     &mmv MOVE_LEFT                  &mmv MOVE_RIGHT &kp RET &trans    &trans
+//                                      ╰──────────┴──────────┴──────────┴──────────╯                    ╰──────────┴──────────┴──────────┴──────────╯
+            >;
+            sensor-bindings = <&scroll_encoder>;
+        };
+
+        // Системный слой - функциональные клавиши и управление системой
+        system_layer {
+            display-name = "System";
+            bindings = <
+//╭──────────────┬──────────┬──────────┬──────────┬──────────┬──────────╮                                          ╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮
+    &studio_unlock &kp F1     &kp F2     &kp F3     &kp F4     &kp F5                                               &kp F6     &kp F7     &kp F8     &kp F9     &kp F10    &kp F11
+//├──────────────┼──────────┼──────────┼──────────┼──────────┼──────────┤                                          ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
+    &bt BT_CLR_ALL &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4                               &bootloader &mkp LCLK  &mkp MCLK  &mkp RCLK  &kp PSCRN  &kp F12
+//├──────────────┼──────────┼──────────┼──────────┼──────────┼──────────┼──────────╮                    ╭──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
+    &ext_power EP_TOG &sys_reset &trans &bootloader &out OUT_USB &out OUT_BLE &kp C_MUTE                 &kp DOWN   &trans     &trans     &bootloader &sys_reset &kp SLCK   &kp PAUSE_BREAK
+//╰──────────────┴──────────┴──────────┼──────────┼──────────┼──────────┼──────────┤                    ├──────────┼──────────┼──────────┼──────────┴──────────┴──────────┴──────────╯
+                                        &trans     &trans     &trans     &mmv MOVE_LEFT                  &mmv MOVE_RIGHT &trans &trans    &trans
+//                                      ╰──────────┴──────────┴──────────┴──────────╯                    ╰──────────┴──────────┴──────────┴──────────╯
+            >;
+            sensor-bindings = <&scroll_encoder>;
+        };
+
+        // Игровой слой - упрощенная раскладка без модификаторов
+        game_layer {
+            display-name = "Game";
+            bindings = <
+//╭──────────────┬──────────┬──────────┬──────────┬──────────┬──────────╮                                          ╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮
+    &kp TAB       &kp Q      &kp W      &kp E      &kp R      &kp T                                                 &kp Y      &kp U      &kp I      &kp O      &kp P      &kp BSPC
+//├──────────────┼──────────┼──────────┼──────────┼──────────┼──────────┤                                          ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
+    &td0          &kp A      &kp S      &kp D      &kp F      &kp G                                                 &kp H      &kp J      &kp K      &kp L      &kp SEMI   &kp SQT
+//├──────────────┼──────────┼──────────┼──────────┼──────────┼──────────┼──────────╮                    ╭──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
+    &kp LCTRL     &kp Z      &kp X      &kp C      &kp V      &kp B      &kp C_MUTE                     &kp DOWN   &kp N      &kp M      &kp COMMA  &kp DOT    &kp FSLH   &to 0
+//╰──────────────┴──────────┴──────────┼──────────┼──────────┼──────────┼──────────┤                    ├──────────┼──────────┼──────────┼──────────┴──────────┴──────────┴──────────╯
+                                        &kp LGUI   &mo SYM    &kp SPACE  &kp LEFT                        &kp RIGHT  &kp ENTER  &mo NUM    &kp RALT
+//                                      ╰──────────┴──────────┴──────────┴──────────╯                    ╰──────────┴──────────┴──────────┴──────────╯
+            >;
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
     };
