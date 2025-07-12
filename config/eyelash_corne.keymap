@@ -139,6 +139,127 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
 
     // Определение комбинаций клавиш
     combos {
+        compatible = "zmk,combos";
+
+        combo_semicolon {
+            timeout-ms = <30>;
+            key-positions = <LM2 LM3>;
+            bindings = <&kp SEMI>;
+        };
+
+        combo_dollar {
+            timeout-ms = <30>;
+            key-positions = <RM2 RM3>;
+            bindings = <&kp DOLLAR>;
+        };
+
+        combo_dot {
+            timeout-ms = <30>;
+            key-positions = <LM1 LM2>;
+            bindings = <&kp DOT>;
+        };
+
+        combo_paren_left {
+            timeout-ms = <30>;
+            key-positions = <LH1 LH2>;
+            bindings = <&kp LBRC>;
+        };
+
+        combo_paren_right {
+            timeout-ms = <30>;
+            key-positions = <RH1 RH2>;
+            bindings = <&kp RBRC>;
+        };
+
+        combo_brace_left {
+            timeout-ms = <30>;
+            key-positions = <LT2 LT3>;
+            bindings = <&kp LCURLY>;
+        };
+
+        combo_brace_right {
+            timeout-ms = <30>;
+            key-positions = <RT2 RT3>;
+            bindings = <&kp RCURLY>;
+        };
+
+        combo_bracket_left {
+            timeout-ms = <30>;
+            key-positions = <LB2 LB3>;
+            bindings = <&kp LBKT>;
+        };
+
+        combo_bracket_right {
+            timeout-ms = <30>;
+            key-positions = <RB2 RB3>;
+            bindings = <&kp RBKT>;
+        };
+
+        combo_equal {
+            timeout-ms = <30>;
+            key-positions = <LM3 LM4>;
+            bindings = <&kp EQUAL>;
+        };
+
+        combo_quote_double {
+            timeout-ms = <30>;
+            key-positions = <LM4 LM5>;
+            bindings = <&kp DQT>;
+        };
+
+        combo_quote_single {
+            timeout-ms = <30>;
+            key-positions = <RM4 RM5>;
+            bindings = <&kp SQT>;
+        };
+
+        combo_comma {
+            timeout-ms = <30>;
+            key-positions = <RM1 RM2>;
+            bindings = <&kp COMMA>;
+        };
+
+        combo_colon {
+            timeout-ms = <30>;
+            key-positions = <RM3 RM4>;
+            bindings = <&kp COLON>;
+        };
+
+        combo_bang {
+            timeout-ms = <30>;
+            key-positions = <LH0 LH1>;
+            bindings = <&kp EXCL>;
+        };
+
+        combo_question {
+            timeout-ms = <30>;
+            key-positions = <RH0 RH1>;
+            bindings = <&kp QMARK>;
+        };
+
+        combo_plus {
+            timeout-ms = <30>;
+            key-positions = <LM0 LM1>;
+            bindings = <&kp PLUS>;
+        };
+
+        combo_minus {
+            timeout-ms = <30>;
+            key-positions = <RM0 RM1>;
+            bindings = <&kp MINUS>;
+        };
+
+        combo_less {
+            timeout-ms = <30>;
+            key-positions = <LT3 LT4>;
+            bindings = <&kp LT>;
+        };
+
+        combo_greater {
+            timeout-ms = <30>;
+            key-positions = <RT3 RT4>;
+            bindings = <&kp GT>;
+        };
     };
 
     // Определение макросов
