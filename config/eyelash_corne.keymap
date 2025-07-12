@@ -177,7 +177,7 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
             key-positions = <LB4 LB1>;
             timeout-ms = <20>;
         };
-    }
+    };
     // Определение раскладки клавиатуры
     keymap {
         compatible = "zmk,keymap";
