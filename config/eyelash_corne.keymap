@@ -147,6 +147,12 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
             bindings = <&kp SEMI>;
         };
 
+        combo_colon {
+            timeout-ms = <30>;
+            key-positions = <RM3 RM4>;
+            bindings = <&kp COLON>;
+        };
+
         combo_dollar {
             timeout-ms = <30>;
             key-positions = <RM2 RM3>;
@@ -159,82 +165,16 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
             bindings = <&kp DOT>;
         };
 
-        combo_paren_left {
-            timeout-ms = <30>;
-            key-positions = <LH1 LH2>;
-            bindings = <&kp LBRC>;
-        };
-
-        combo_paren_right {
-            timeout-ms = <30>;
-            key-positions = <RH1 RH2>;
-            bindings = <&kp RBRC>;
-        };
-
-        combo_brace_left {
-            timeout-ms = <30>;
-            key-positions = <LT2 LT3>;
-            bindings = <&kp LCURLY>;
-        };
-
-        combo_brace_right {
-            timeout-ms = <30>;
-            key-positions = <RT2 RT3>;
-            bindings = <&kp RCURLY>;
-        };
-
-        combo_bracket_left {
-            timeout-ms = <30>;
-            key-positions = <LB2 LB3>;
-            bindings = <&kp LBKT>;
-        };
-
-        combo_bracket_right {
-            timeout-ms = <30>;
-            key-positions = <RB2 RB3>;
-            bindings = <&kp RBKT>;
-        };
-
-        combo_equal {
-            timeout-ms = <30>;
-            key-positions = <LM3 LM4>;
-            bindings = <&kp EQUAL>;
-        };
-
-        combo_quote_double {
-            timeout-ms = <30>;
-            key-positions = <LM4 LM5>;
-            bindings = <&kp DQT>;
-        };
-
-        combo_quote_single {
-            timeout-ms = <30>;
-            key-positions = <RM4 RM5>;
-            bindings = <&kp SQT>;
-        };
-
         combo_comma {
             timeout-ms = <30>;
             key-positions = <RM1 RM2>;
             bindings = <&kp COMMA>;
         };
 
-        combo_colon {
+        combo_equal {
             timeout-ms = <30>;
-            key-positions = <RM3 RM4>;
-            bindings = <&kp COLON>;
-        };
-
-        combo_bang {
-            timeout-ms = <30>;
-            key-positions = <LH0 LH1>;
-            bindings = <&kp EXCL>;
-        };
-
-        combo_question {
-            timeout-ms = <30>;
-            key-positions = <RH0 RH1>;
-            bindings = <&kp QMARK>;
+            key-positions = <LM3 LM4>;
+            bindings = <&kp EQUAL>;
         };
 
         combo_plus {
@@ -259,6 +199,68 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
             timeout-ms = <30>;
             key-positions = <RT3 RT4>;
             bindings = <&kp GT>;
+        };
+
+        combo_quote_double {
+            timeout-ms = <30>;
+            key-positions = <LM4 LM5>;
+            bindings = <&kp DQUO>;
+        };
+
+        combo_quote_single {
+            timeout-ms = <30>;
+            key-positions = <RM4 RM5>;
+            bindings = <&kp SQUO>;
+        };
+
+        // Новые: Скобки и прочие
+
+        combo_paren_l {
+            timeout-ms = <30>;
+            key-positions = <LT2 LT3>;
+            bindings = <&kp LS(NUM_9)>;
+        };
+
+        combo_paren_r {
+            timeout-ms = <30>;
+            key-positions = <RT2 RT3>;
+            bindings = <&kp LS(NUM_0)>;
+        };
+
+        combo_bracket_l {
+            timeout-ms = <30>;
+            key-positions = <LB2 LB3>;
+            bindings = <&kp LBKT>;
+        };
+
+        combo_bracket_r {
+            timeout-ms = <30>;
+            key-positions = <RB2 RB3>;
+            bindings = <&kp RBKT>;
+        };
+
+        combo_brace_l {
+            timeout-ms = <30>;
+            key-positions = <LT1 LT2>;
+            bindings = <&kp LS(LBKT)>;
+        };
+
+        combo_brace_r {
+            timeout-ms = <30>;
+            key-positions = <RT1 RT2>;
+            bindings = <&kp LS(RBKT)>;
+        };
+
+        combo_question {
+            timeout-ms = <30>;
+            key-positions = <LB3 LB4>;
+            bindings = <&kp LS(SLASH)>;
+        };
+
+        combo_exclamation {
+            timeout-ms = <30>;
+            key-positions = <RB3 RB4>;
+            bindings = <&kp LS(NUM_1)>;
         };
     };
 
