@@ -119,7 +119,7 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
 //          display-name = "Shift/Caps Lock Tap Dance";
 //          #binding-cells = <0>;
 //          bindings = <&kp LEFT_SHIFT>, <&kp CAPS>;
-        };
+//      };
         td_lgui: tap_dance_lgui {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
