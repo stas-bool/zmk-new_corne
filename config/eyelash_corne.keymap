@@ -37,12 +37,6 @@
 // Определение комбинации копирования/вырезания: копировать по одному нажатию, вырезать по двойному
 ZMK_TAP_DANCE(copy_cut, bindings = <&kp LG(C)>, <&kp LG(X)>;
               tapping-term-ms = <200>;)
-              
-// Комбинации клавиш для основных операций редактирования
-ZMK_COMBO(copy_cut, &copy_cut,   LB2 LB3, ALL)  // копировать/вырезать (X + C)
-ZMK_COMBO(paste,    &kp LG(V), LB1 LB2, ALL)    // вставить (C + V)
-ZMK_COMBO(undo ,    &kp LG(Z), LB4 LB3, ALL)    // отменить (Z + X)
-ZMK_COMBO(redo ,    &kp LG(LS(Z)), LB4 LB1, ALL) // повторить (Z + V)
 
 // Переключение слоев по двойному нажатию
 ZMK_TAP_DANCE(layerdance, bindings = <&tog 4>, <&tog 5>;
@@ -152,7 +146,38 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
                 ;
         };
     };
+              
+    combos {
+        compatible = "zmk,combos";
 
+        // копировать/вырезать (X + C)
+        copy_cut {
+            bindings = <&copy_cut>;
+            key-positions = <LB2 LB3>;
+            timeout-ms = <20>;
+        };
+
+        // вставить (C + V)
+        paste {
+            bindings = <&kp LG(V)>;
+            key-positions = <LB1 LB2>;
+            timeout-ms = <20>;
+        };
+
+        // отменить (Z + X)
+        undo {
+            bindings = <&kp LG(Z)>;
+            key-positions = <LB4 LB3>;
+            timeout-ms = <20>;
+        };
+
+        // повторить (Z + V)
+        redo {
+            bindings = <&kp LG(LS(Z))>;
+            key-positions = <LB4 LB1>;
+            timeout-ms = <20>;
+        };
+    }
     // Определение раскладки клавиатуры
     keymap {
         compatible = "zmk,keymap";
