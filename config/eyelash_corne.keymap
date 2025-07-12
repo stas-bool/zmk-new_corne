@@ -36,14 +36,13 @@
 
 // Определение комбинации копирования/вырезания: копировать по одному нажатию, вырезать по двойному
 ZMK_TAP_DANCE(copy_cut, bindings = <&kp LG(C)>, <&kp LG(X)>;
-              tapping-term-ms = <150>;)
+              tapping-term-ms = <200>;)
               
 // Комбинации клавиш для основных операций редактирования
-ZMK_COMBO(copy_cut, &copy_cut,   LB2 LB3, ALL)  // копировать/вырезать (C + V)
-ZMK_COMBO(paste,    &kp LG(V), LB1 LB2, ALL)    // вставить (X + C)
-ZMK_COMBO(undo ,    &kp LG(Z), LB4 LB3, ALL)    // отменить (Z + V)
-ZMK_COMBO(redo ,    &kp LG(LS(Z)), LB4 LB1, ALL) // повторить (Z + X)
-ZMK_COMBO(escape ,  &kp ESC, LT5 LT4, ALL)      // escape (Q + W)
+ZMK_COMBO(copy_cut, &copy_cut,   LB2 LB3, ALL)  // копировать/вырезать (X + C)
+ZMK_COMBO(paste,    &kp LG(V), LB1 LB2, ALL)    // вставить (C + V)
+ZMK_COMBO(undo ,    &kp LG(Z), LB4 LB3, ALL)    // отменить (Z + X)
+ZMK_COMBO(redo ,    &kp LG(LS(Z)), LB4 LB1, ALL) // повторить (Z + V)
 
 // Переключение слоев по двойному нажатию
 ZMK_TAP_DANCE(layerdance, bindings = <&tog 4>, <&tog 5>;
@@ -76,6 +75,9 @@ ZMK_HOLD_TAP(hmr,
 &msc_input_listener { input-processors = <&zip_scroll_scaler 2 1>; };
 
 // Определение умного цифрового слоя
+// Удерживаете клавишу - временный доступ к цифровому слою
+// Одно нажатие - цифровой слой активен пока вводите цифры
+// Двойное нажатие - цифровой слой активен для следующего, одного нажатия
 #define SMART_NUM &smart_num NUM 0
 ZMK_HOLD_TAP(smart_num, bindings = <&mo>, <&num_dance>; flavor = "balanced";
              tapping-term-ms = <200>; quick-tap-ms = <QUICK_TAP_MS>;)
@@ -112,11 +114,11 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
     // Определение пользовательских поведений клавиш
     behaviors {
         // Tap Dance для Shift/Caps Lock
-        td_shcp: td_shcp {
-            compatible = "zmk,behavior-tap-dance";
-            display-name = "Shift/Caps Lock Tap Dance";
-            #binding-cells = <0>;
-            bindings = <&kp LEFT_SHIFT>, <&kp CAPS>;
+//      td_shcp: td_shcp {
+//          compatible = "zmk,behavior-tap-dance";
+//          display-name = "Shift/Caps Lock Tap Dance";
+//          #binding-cells = <0>;
+//          bindings = <&kp LEFT_SHIFT>, <&kp CAPS>;
         };
         td_lgui: tap_dance_lgui {
             compatible = "zmk,behavior-tap-dance";
@@ -136,7 +138,7 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
             #binding-cells = <0>;
             r_ws { sequence = <L>; bindings = <&kp LC(LG(RIGHT_ARROW))>; };
             l_ws { sequence = <H>; bindings = <&kp LC(LG(LEFT_ARROW))>; };
-            ctrl_tab_d_seq { sequence = <D>; bindings = <&macro_press &kp LCTRL &macro_tap &kp TAB &kp D &macro_release &kp LCTRL>; };
+            ctrl_tab_d_seq { sequence = <D>; bindings = <&ctrl_tab_d>; };
         };
     };
 
@@ -163,6 +165,126 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
         backspace {
             bindings = <&kp BACKSPACE>;
             key-positions = <RM1 RM2>;
+        };
+
+        combo_semicolon {
+            timeout-ms = <30>;
+            key-positions = <LM2 LM3>;
+            bindings = <&kp SEMI>;
+        };
+
+        combo_dollar {
+            timeout-ms = <30>;
+            key-positions = <RM2 RM3>;
+            bindings = <&kp DOLLAR>;
+        };
+
+        combo_dot {
+            timeout-ms = <30>;
+            key-positions = <LM1 LM2>;
+            bindings = <&kp DOT>;
+        };
+
+        combo_paren_left {
+            timeout-ms = <30>;
+            key-positions = <LH1 LH2>;
+            bindings = <&kp LBRC>;
+        };
+
+        combo_paren_right {
+            timeout-ms = <30>;
+            key-positions = <RH1 RH2>;
+            bindings = <&kp RBRC>;
+        };
+
+        combo_brace_left {
+            timeout-ms = <30>;
+            key-positions = <LT2 LT3>;
+            bindings = <&kp LCURLY>;
+        };
+
+        combo_brace_right {
+            timeout-ms = <30>;
+            key-positions = <RT2 RT3>;
+            bindings = <&kp RCURLY>;
+        };
+
+        combo_bracket_left {
+            timeout-ms = <30>;
+            key-positions = <LB2 LB3>;
+            bindings = <&kp LBKT>;
+        };
+
+        combo_bracket_right {
+            timeout-ms = <30>;
+            key-positions = <RB2 RB3>;
+            bindings = <&kp RBKT>;
+        };
+
+        combo_equal {
+            timeout-ms = <30>;
+            key-positions = <LM3 LM4>;
+            bindings = <&kp EQUAL>;
+        };
+
+        combo_quote_double {
+            timeout-ms = <30>;
+            key-positions = <LM4 LM5>;
+            bindings = <&kp DQT>;
+        };
+
+        combo_quote_single {
+            timeout-ms = <30>;
+            key-positions = <RM4 RM5>;
+            bindings = <&kp SQT>;
+        };
+
+        combo_comma {
+            timeout-ms = <30>;
+            key-positions = <RM1 RM2>;
+            bindings = <&kp COMMA>;
+        };
+
+        combo_colon {
+            timeout-ms = <30>;
+            key-positions = <RM3 RM4>;
+            bindings = <&kp COLON>;
+        };
+
+        combo_bang {
+            timeout-ms = <30>;
+            key-positions = <LH0 LH1>;
+            bindings = <&kp EXCL>;
+        };
+
+        combo_question {
+            timeout-ms = <30>;
+            key-positions = <RH0 RH1>;
+            bindings = <&kp QMARK>;
+        };
+
+        combo_plus {
+            timeout-ms = <30>;
+            key-positions = <LM0 LM1>;
+            bindings = <&kp PLUS>;
+        };
+
+        combo_minus {
+            timeout-ms = <30>;
+            key-positions = <RM0 RM1>;
+            bindings = <&kp MINUS>;
+        };
+
+        combo_less {
+            timeout-ms = <30>;
+            key-positions = <LT3 LT4>;
+            bindings = <&kp LT>;
+        };
+
+        combo_greater {
+            timeout-ms = <30>;
+            key-positions = <RT3 RT4>;
+            bindings = <&kp GT>;
         };
     };
 
@@ -197,7 +319,7 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
 //├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤    ╭───────────────╮       ╰───────────────┼───────────────┼───────────────╯        ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
     &kp LSHFT       &kp Z           &kp X           &kp C           &kp V           &kp B                &kp C_MUTE                              &kp DOWN                                 &kp N           &hmr LGUI M    &hmr LALT COMMA  &hmr LCTRL DOT &hmr LSHFT FSLH  &to 4
 //╰───────────────┴───────────────┴───────────────┼───────────────┼───────────────┼───────────────┤    ╰───────────────╯                       ╰───────────────╯                        ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────╯
-                                                    &td_lgui        &mo SYM         &kp SPACE                                                                                             &kp ENTER       SMART_NUM       &td_rgui_menu
+                                                    &kp LGUI        &mo SYM         &kp SPACE                                                                                             &kp ENTER       SMART_NUM       &kp RGUI
 //                                                ╰───────────────┴───────────────┴───────────────╯                                                                                     ╰───────────────┴───────────────┴───────────────╯
             >;
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
