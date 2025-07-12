@@ -50,7 +50,7 @@ layers:
   - '&smart_num 2 0'
   - '&td_rgui_menu'
   Symbols:
-  - '&leader'
+  - '&leader1'
   - '!'
   - '@'
   - '#'
