@@ -49,10 +49,6 @@ ZMK_COMBO(escape ,  &kp ESC, LT5 LT4, ALL)      // escape
 ZMK_TAP_DANCE(layerdance, bindings = <&tog 4>, <&tog 5>;
               tapping-term-ms = <200>;)
               
-// Вызов лаунчера: RALT по одному нажатию, Alt+Space по двойному
-ZMK_TAP_DANCE(laucher, bindings = <&kp RALT>, <&kp LA(SPACE)>;
-              tapping-term-ms = <200>;)
-
 // Настройка поведения клавиш home-row mods для левой руки
 ZMK_HOLD_TAP(hml,
     flavor = "balanced";
@@ -116,11 +112,31 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
     // Определение пользовательских поведений клавиш
     behaviors {
         // Tap Dance для Shift/Caps Lock
-        td0: td0 {
+        td_shcp: td_shcp {
             compatible = "zmk,behavior-tap-dance";
             display-name = "Shift/Caps Lock Tap Dance";
             #binding-cells = <0>;
             bindings = <&kp LEFT_SHIFT>, <&kp CAPS>;
+        };
+        td_lgui: tap_dance_lgui {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp LGUI>;
+            tapping-term-ms = <200>;
+        };
+        // RGUI по одному нажатию, Opt+Space по двойному
+        td_rgui_menu: tap_dance_rgui_menu {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp RGUI>, <&kp LA(SPACE)>;
+            tapping-term-ms = <200>;
+        };
+        leader1: leader1 {
+            compatible = "zmk,behavior-leader-key";
+            #binding-cells = <0>;
+            r_ws { sequence = <L>; bindings = <&kp LC(LG(RIGHT_ARROW))>; };
+            l_ws { sequence = <H>; bindings = <&kp LC(LG(LEFT_ARROW))>; };
+            ctrl_tab_d_seq { sequence = <D>; bindings = <&macro_press &kp LCTRL &macro_tap &kp TAB &kp D &macro_release &kp LCTRL>; };
         };
     };
 
@@ -152,6 +168,18 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
 
     // Определение макросов
     macros {
+        ctrl_tab_d: ctrl_tab_d {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            tap-ms = <10>;
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_tap &kp TAB>
+                , <&macro_tap &kp D>
+                , <&macro_release &kp LCTRL>
+                ;
+        };
     };
 
     // Определение раскладки клавиатуры
@@ -163,13 +191,13 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
             display-name = "Base";
             bindings = <
 //╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮                                            ╭───────────────╮                        ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮
-    &kp TAB         &kp Q           &kp W           &kp E           &kp R           &kp T                                                        &kp UP                                   &kp Y           &kp U           &kp I           &kp O           &kp P           &kp BSPC
+    &kp ESC         &kp Q           &kp W           &kp E           &kp R           &kp T                                                        &kp UP                                   &kp Y           &kp U           &kp I           &kp O           &kp P           &kp BSPC
 //├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤                            ╭───────────────┼───────────────┼───────────────╮        ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
-    &td0            &hml LSHFT A    &hml LCTRL S    &hml LALT D     &hml LGUI F     &kp G                                        &kp LEFT        &kp ENTER       &kp RIGHT                &kp H           &hmr LGUI J     &hmr LALT K     &hmr LCTRL L    &hmr LSHFT SEMI &kp SQT
+    &kp TAB         &hml LSHFT A    &hml LCTRL S    &hml LALT D     &hml LGUI F     &kp G                                        &kp LEFT        &kp ENTER       &kp RIGHT                &kp H           &kp J           &kp K           &kp L           &kp SEMI        &kp SQT
 //├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤    ╭───────────────╮       ╰───────────────┼───────────────┼───────────────╯        ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
-    &kp LCTRL       &kp Z           &kp X           &kp C           &kp V           &kp B                &kp C_MUTE                              &kp DOWN                                 &kp N           &kp M           &kp COMMA       &kp DOT         &kp FSLH        &to 4
+    &kp LSHFT       &kp Z           &kp X           &kp C           &kp V           &kp B                &kp C_MUTE                              &kp DOWN                                 &kp N           &hmr LGUI M    &hmr LALT COMMA  &hmr LCTRL DOT &hmr LSHFT FSLH  &to 4
 //╰───────────────┴───────────────┴───────────────┼───────────────┼───────────────┼───────────────┤    ╰───────────────╯                       ╰───────────────╯                        ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────╯
-                                                    &kp LGUI        &mo SYM         &kp SPACE                                                                                             &kp ENTER       SMART_NUM      &laucher
+                                                    &td_lgui      &lt SYM &leader1  &kp SPACE                                                                                             &kp ENTER       SMART_NUM       &td_rgui_menu
 //                                                ╰───────────────┴───────────────┴───────────────╯                                                                                     ╰───────────────┴───────────────┴───────────────╯
             >;
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
@@ -231,11 +259,11 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
             display-name = "Game";
             bindings = <
 //╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮                                            ╭───────────────╮                        ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮
-    &kp TAB         &kp Q           &kp W           &kp E           &kp R           &kp T                                                        &kp UP                                   &kp Y           &kp U           &kp I           &kp O           &kp P           &kp BSPC
+    &kp ESC         &kp Q           &kp W           &kp E           &kp R           &kp T                                                        &kp UP                                   &kp Y           &kp U           &kp I           &kp O           &kp P           &kp BSPC
 //├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤                            ╭───────────────┼───────────────┼───────────────╮        ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
-    &td0            &kp A           &kp S           &kp D           &kp F           &kp G                                        &kp LEFT        &kp ENTER       &kp RIGHT                &kp H           &kp J           &kp K           &kp L           &kp SEMI        &kp SQT
+    &kp TAB         &kp A           &kp S           &kp D           &kp F           &kp G                                        &kp LEFT        &kp ENTER       &kp RIGHT                &kp H           &kp J           &kp K           &kp L           &kp SEMI        &kp SQT
 //├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤    ╭───────────────╮       ╰───────────────┼───────────────┼───────────────╯        ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
-    &kp LCTRL       &kp Z           &kp X           &kp C           &kp V           &kp B                &kp C_MUTE                              &kp DOWN                                 &kp N           &kp M           &kp COMMA       &kp DOT         &kp FSLH        &to 0
+    &kp LSHFT       &kp Z           &kp X           &kp C           &kp V           &kp B                &kp C_MUTE                              &kp DOWN                                 &kp N           &kp M           &kp COMMA       &kp DOT         &kp FSLH        &to 0
 //╰───────────────┴───────────────┴───────────────┼───────────────┼───────────────┼───────────────┤    ╰───────────────╯                       ╰───────────────╯                        ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────╯
                                                     &kp LGUI        &mo SYM         &kp SPACE                                                                                             &kp ENTER       &mo NUM         &kp RALT
 //                                                ╰───────────────┴───────────────┴───────────────╯                                                                                     ╰───────────────┴───────────────┴───────────────╯
