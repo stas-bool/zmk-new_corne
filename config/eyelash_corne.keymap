@@ -192,11 +192,11 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
         
         //// Верхний ряд (слева)
 
-        combo_lt5_lt4 {
-            bindings = <&kp >;
-            key-positions = <LT5 LT4>;
-            timeout-ms = <20>;
-        };
+        // combo_lt5_lt4 {
+        //     bindings = <&kp >;
+        //     key-positions = <LT5 LT4>;
+        //     timeout-ms = <20>;
+        // };
         
         // QW знак меньше < 
         combo_LESS_THAN {
@@ -219,18 +219,18 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
             timeout-ms = <20>;
         };
         
-        combo_lt1_lt0 {
-            bindings = <&kp >;
-            key-positions = <LT1 LT0>;
-            timeout-ms = <20>;
-        };
+        // combo_lt1_lt0 {
+        //     bindings = <&kp >;
+        //     key-positions = <LT1 LT0>;
+        //     timeout-ms = <20>;
+        // };
         
         //// Верхний ряд (справа)
-        combo_rt0_rt1 {
-            bindings = <&kp >;
-            key-positions = <RT0 RT1>;
-            timeout-ms = <20>;
-        };
+        // combo_rt0_rt1 {
+        //     bindings = <&kp >;
+        //     key-positions = <RT0 RT1>;
+        //     timeout-ms = <20>;
+        // };
         
         // UI " Двойная кавычка
         combo_DOUBLE_QUOTES {
@@ -253,21 +253,21 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
             timeout-ms = <20>;
         };
         
-        combo_rt4_rt5 {
-            bindings = <>;
-            key-positions = <RT4 RT5>;
-            timeout-ms = <20>;
-        };
+        // combo_rt4_rt5 {
+        //     bindings = <>;
+        //     key-positions = <RT4 RT5>;
+        //     timeout-ms = <20>;
+        // };
 
         ///// Средний ряд (слева)
-        combo_lm5_lm4 {
-            bindings = <>;
-            key-positions = <LM5 LM4>;
-            timeout-ms = <20>;
-        };
+        // combo_lm5_lm4 {
+        //     bindings = <&kp>;
+        //     key-positions = <LM5 LM4>;
+        //     timeout-ms = <20>;
+        // };
         
         // AS левая квадратная скобка
-        combo_lm4_lm3 {
+        combo_LEFT_BRACKET {
             bindings = <&kp LEFT_BRACKET>;
             key-positions = <LM4 LM3>;
             timeout-ms = <20>;
@@ -324,11 +324,11 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
             timeout-ms = <20>;
         };
         
-        combo_rm4_rm5 {
-            bindings = <&kp >;
-            key-positions = <RM4 RM5>;
-            timeout-ms = <20>;
-        };
+        // combo_rm4_rm5 {
+        //     bindings = <&kp >;
+        //     key-positions = <RM4 RM5>;
+        //     timeout-ms = <20>;
+        // };
     };
     // Определение раскладки клавиатуры
     keymap {
