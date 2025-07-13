@@ -2,12 +2,12 @@ layout: {zmk_keyboard: eyelash_corne}
 layers:
   Base:
   - $$mdi:keyboard-tab$$
-  - Q
+  - '&hml LCTRL Q'
   - W
   - E
   - R
   - T
-  - $$mdi:arrow-up-bold$$
+  - Alt+Ctl+Gui+E
   - Y
   - U
   - I
@@ -20,14 +20,14 @@ layers:
   - '&hml LALT D'
   - '&hml LGUI F'
   - G
-  - $$mdi:arrow-left-bold$$
-  - {t: '$$mdi:keyboard-return$$', type: enter}
-  - $$mdi:arrow-right-bold$$
+  - Ctl+Alt+$$mdi:arrow-left-bold$$
+  - Alt+Ctl+$$mdi:arrow-up-bold$$
+  - Ctl+Alt+$$mdi:arrow-right-bold$$
   - H
-  - J
-  - K
-  - L
-  - {t: ;, s: ':'}
+  - '&hmr LGUI J'
+  - '&hmr LALT K'
+  - '&hmr LCTRL L'
+  - '&hmr LSHFT SEMI'
   - {t: '''', s: '"'}
   - $$mdi:apple-keyboard-shift$$
   - Z
@@ -36,12 +36,12 @@ layers:
   - V
   - B
   - $$mdi:volume-off$$
-  - $$mdi:arrow-down-bold$$
+  - Alt+Ctl+Gui+D
   - N
-  - '&hmr LGUI M'
-  - '&hmr LALT COMMA'
-  - '&hmr LCTRL DOT'
-  - '&hmr LSHFT FSLH'
+  - M
+  - {t: ',', s: <}
+  - {t: ., s: '>'}
+  - {t: /, s: '?'}
   - {t: Game, h: toggle}
   - LGUI
   - Symbols
@@ -56,7 +56,7 @@ layers:
   - '#'
   - $
   - '%'
-  - $$mdi:arrow-up-bold$$
+  - Alt+Ctl+E
   - ^
   - '&'
   - '*'
@@ -69,9 +69,9 @@ layers:
   - {t: '[', s: '{'}
   - {t: ., s: '>'}
   - ':'
-  - $$mdi:arrow-left-bold$$
-  - {t: '$$mdi:keyboard-return$$', type: enter}
-  - $$mdi:arrow-right-bold$$
+  - F13
+  - Alt+Ctl+Gui+$$mdi:arrow-up-bold$$
+  - F14
   - _
   - '|'
   - {t: '=', s: +}
@@ -85,7 +85,7 @@ layers:
   - {t: ',', s: <}
   - {t: ;, s: ':'}
   - $$mdi:volume-off$$
-  - $$mdi:arrow-down-bold$$
+  - Alt+Ctl+F
   - {t: '-', s: _}
   - +
   - '?'
@@ -333,3 +333,5 @@ combos:
   k: )
 - p: [25, 26]
   k: {t: ']', s: '}'}
+- p: [26, 27]
+  k: $$mdi:backspace-reverse-outline$$
