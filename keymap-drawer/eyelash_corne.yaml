@@ -1,7 +1,7 @@
 layout: {zmk_keyboard: eyelash_corne}
 layers:
   Base:
-  - $$mdi:keyboard-esc$$
+  - $$mdi:keyboard-tab$$
   - Q
   - W
   - E
@@ -14,7 +14,7 @@ layers:
   - O
   - P
   - {t: '$$mdi:backspace$$', type: backspace}
-  - $$mdi:keyboard-tab$$
+  - $$mdi:keyboard-esc$$
   - '&hml LSHFT A'
   - '&hml LCTRL S'
   - '&hml LALT D'
@@ -46,7 +46,7 @@ layers:
   - LGUI
   - Symbols
   - $$mdi:keyboard-space$$
-  - {t: '$$mdi:keyboard-return$$', type: enter}
+  - {t: '$$mdi:keyboard-return$$', h: Arrows}
   - '&smart_num 2 0'
   - RGUI
   Symbols:
@@ -197,7 +197,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   Game:
-  - $$mdi:keyboard-esc$$
+  - $$mdi:keyboard-tab$$
   - Q
   - W
   - E
@@ -210,7 +210,7 @@ layers:
   - O
   - P
   - {t: '$$mdi:backspace$$', type: backspace}
-  - $$mdi:keyboard-tab$$
+  - $$mdi:keyboard-esc$$
   - A
   - S
   - D
@@ -245,12 +245,91 @@ layers:
   - {t: '$$mdi:keyboard-return$$', type: enter}
   - Num
   - $$mdi:apple-keyboard-option$$
+  Arrows:
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - $$mdi:arrow-up-bold$$
+  - {t: '$$mdi:transfer$$', type: trans}
+  - '&HOME'
+  - PgUp
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - $$mdi:arrow-left-bold$$
+  - {t: '$$mdi:keyboard-return$$', type: enter}
+  - $$mdi:arrow-right-bold$$
+  - $$mdi:arrow-left-bold$$
+  - $$mdi:arrow-down-bold$$
+  - $$mdi:arrow-up-bold$$
+  - $$mdi:arrow-right-bold$$
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - $$mdi:volume-off$$
+  - $$mdi:arrow-down-bold$$
+  - {t: '$$mdi:transfer$$', type: trans}
+  - '&END'
+  - PgDn
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {type: held}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
 combos:
 - p: [31, 30]
   k: '&copy_cut'
 - p: [32, 31]
   k: {t: V, h: '$$mdi:apple-keyboard-command$$'}
 - p: [29, 30]
-  k: {t: Z, h: '$$mdi:apple-keyboard-command$$'}
+  k: {t: '`', s: '~'}
+- p: [38, 39]
+  k: '~'
 - p: [29, 32]
   k: Gui+Sft+Z
+- p: [1, 2]
+  k: <
+- p: [2, 3]
+  k: '{'
+- p: [3, 4]
+  k: {t: '''', s: '"'}
+- p: [8, 9]
+  k: '"'
+- p: [9, 10]
+  k: '}'
+- p: [10, 11]
+  k: '>'
+- p: [14, 15]
+  k: {t: '[', s: '{'}
+- p: [15, 16]
+  k: (
+- p: [16, 17]
+  k: ^
+- p: [17, 18]
+  k: {h: '-', s: _}
+- p: [22, 23]
+  k: {t: '=', s: +}
+- p: [23, 24]
+  k: $
+- p: [24, 25]
+  k: )
+- p: [25, 26]
+  k: {t: ']', s: '}'}
