@@ -85,7 +85,7 @@ layers:
   - {t: ',', s: <}
   - {t: ;, s: ':'}
   - $$mdi:volume-off$$
-  - Alt+Ctl+F
+  - Alt+Ctl+D
   - {t: '-', s: _}
   - +
   - '?'
@@ -247,11 +247,11 @@ layers:
   - $$mdi:apple-keyboard-option$$
   Arrows:
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - F1
+  - F2
+  - F3
+  - F4
+  - F5
   - $$mdi:arrow-up-bold$$
   - {t: '$$mdi:transfer$$', type: trans}
   - HOME
@@ -260,11 +260,11 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - F6
+  - F7
+  - F8
+  - F9
+  - F10
   - $$mdi:arrow-left-bold$$
   - {t: '$$mdi:keyboard-return$$', type: enter}
   - $$mdi:arrow-right-bold$$
@@ -275,11 +275,11 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - F12
+  - F13
+  - F14
+  - F15
+  - F16
   - $$mdi:volume-off$$
   - $$mdi:arrow-down-bold$$
   - {t: '$$mdi:transfer$$', type: trans}
@@ -301,10 +301,12 @@ combos:
   k: {t: V, h: '$$mdi:apple-keyboard-command$$'}
 - p: [29, 30]
   k: {t: '`', s: '~'}
-- p: [38, 39]
-  k: '~'
 - p: [29, 32]
   k: Gui+Sft+Z
+- p: [38, 39]
+  k: '~'
+- p: [36, 37]
+  k: '&'
 - p: [1, 2]
   k: <
 - p: [2, 3]
