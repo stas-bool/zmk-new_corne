@@ -114,6 +114,9 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
             r_ws { sequence = <L>; bindings = <&kp LC(LG(RIGHT_ARROW))>; };
             l_ws { sequence = <H>; bindings = <&kp LC(LG(LEFT_ARROW))>; };
             ctrl_tab_d_seq { sequence = <D>; bindings = <&ctrl_tab_d>; };
+            ws1 { sequence = <Q>; bindings = <&kp LC(1)>; };
+            ws2 { sequence = <W>; bindings = <&kp LC(2)>; };
+            ws3 { sequence = <E>; bindings = <&kp LC(3)>; };
         };
     };
 
@@ -324,11 +327,12 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
             timeout-ms = <20>;
         };
         
-        // combo_rm4_rm5 {
-        //     bindings = <&kp >;
-        //     key-positions = <RM4 RM5>;
-        //     timeout-ms = <20>;
-        // };
+        // звезда и бомба DEL
+        combo_del {
+            bindings = <&kp DELETE>;
+            key-positions = <RM4 RM5>;
+            timeout-ms = <20>;
+        };
     };
     // Определение раскладки клавиатуры
     keymap {
@@ -339,11 +343,11 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
             display-name = "Base";
             bindings = <
 //╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮                                            ╭───────────────╮                        ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮
-    &kp TAB         &kp Q           &kp W           &kp E           &kp R           &kp T                                                        &kp UP                                   &kp Y           &kp U           &kp I           &kp O           &kp P           &kp BSPC
+    &kp TAB         &hml LCTRL Q   &kp W           &kp E           &kp R           &kp T                                                       &kp LA(LC(LG(E)))                         &kp Y           &kp U           &kp I           &kp O           &kp P           &kp BSPC
 //├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤                            ╭───────────────┼───────────────┼───────────────╮        ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
-    &kp ESC         &hml LSHFT A    &hml LCTRL S    &hml LALT D     &hml LGUI F     &kp G                                        &kp LEFT        &kp ENTER       &kp RIGHT                &kp H           &kp J           &kp K           &kp L           &kp SEMI        &kp SQT
+    &kp ESC         &hml LSHFT A    &hml LCTRL S    &hml LALT D     &hml LGUI F     &kp G                            &kp LC(LA(LEFT_ARROW)) &kp LA(LC(UP_ARROW)) &kp LC(LA(RIGHT_ARROW))  &kp H           &hmr LGUI J     &hmr LALT K    &hmr LCTRL L     &hmr LSHFT SEMI &kp SQT
 //├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤    ╭───────────────╮       ╰───────────────┼───────────────┼───────────────╯        ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
-    &kp LSHFT       &kp Z           &kp X           &kp C           &kp V           &kp B                &kp C_MUTE                              &kp DOWN                                 &kp N           &hmr LGUI M    &hmr LALT COMMA  &hmr LCTRL DOT &hmr LSHFT FSLH  &to 4
+    &kp LSHFT       &kp Z           &kp X           &kp C           &kp V           &kp B                &kp C_MUTE                             &kp LA(LC(LG(D)))                         &kp N           &kp M           &kp COMMA       &kp DOT         &kp FSLH        &to GAME
 //╰───────────────┴───────────────┴───────────────┼───────────────┼───────────────┼───────────────┤    ╰───────────────╯                       ╰───────────────╯                        ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────╯
                                                     &kp LGUI        &mo SYM         &kp SPACE                                                                                           &lt ARROWS ENTER  SMART_NUM       &kp RGUI
 //                                                ╰───────────────┴───────────────┴───────────────╯                                                                                     ╰───────────────┴───────────────┴───────────────╯
@@ -356,16 +360,16 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
             display-name = "Symbols";
             bindings = <
 //╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮                                            ╭───────────────╮                        ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮
-    &leader1        &kp EXCL        &kp AT          &kp POUND       &kp DOLLAR      &kp PERCENT                                                  &kp UP                                   &kp CARET       &kp AMPS        &kp ASTRK       &kp SLASH       &kp BSLH        &kp DEL
+    &leader1        &kp EXCL        &kp AT          &kp POUND       &kp DOLLAR      &kp PERCENT                                                  &kp LA(LC(E))                            &kp CARET       &kp AMPS        &kp ASTRK       &kp SLASH       &kp BSLH        &kp DEL
 //├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤                            ╭───────────────┼───────────────┼───────────────╮        ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
-    &kp LT          &kp LPAR        &kp LBRC        &kp LBKT        &kp DOT         &kp COLON                                    &kp LEFT        &kp ENTER       &kp RIGHT                &kp UNDER       &kp PIPE        &kp EQUAL       &kp SQT         &kp GRAVE       &kp PG_UP
+    &kp LT          &kp LPAR        &kp LBRC        &kp LBKT        &kp DOT         &kp COLON                                   &kp F13    &kp LA(LC(LG(UP_ARROW))) &kp F14               &kp UNDER       &kp PIPE        &kp EQUAL       &kp SQT         &kp GRAVE       &kp PG_UP
 //├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤    ╭───────────────╮       ╰───────────────┼───────────────┼───────────────╯        ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
-    &kp GT          &kp RPAR        &kp RBRC        &kp RBKT        &kp COMMA       &kp SEMI             &kp C_MUTE                              &kp DOWN                                 &kp MINUS       &kp PLUS        &kp QMARK       &kp DQT         &kp TILDE       &trans
+    &kp GT          &kp RPAR        &kp RBRC        &kp RBKT        &kp COMMA       &kp SEMI             &kp C_MUTE                              &kp LA(LC(F))                            &kp MINUS       &kp PLUS        &kp QMARK       &kp DQT         &kp TILDE       &trans
 //╰───────────────┴───────────────┴───────────────┼───────────────┼───────────────┼───────────────┤    ╰───────────────╯                       ╰───────────────╯                        ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────╯
                                                     &trans          &trans          &trans                                                                                                &kp INS         &kp DEL         &trans
 //                                                ╰───────────────┴───────────────┴───────────────╯                                                                                     ╰───────────────┴───────────────┴───────────────╯
             >;
-            sensor-bindings = <&scroll_encoder>;
+            sensor-bindings = <&inc_dec_kp C_BRIGHTNESS_INC C_BRIGHTNESS_DEC>;
         };
 
         // Цифровой слой - цифры и управление мышью
@@ -433,7 +437,7 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
                                                     &trans          &trans          &trans                                                                                                &trans          &trans          &trans
 //                                                ╰───────────────┴───────────────┴───────────────╯                                                                                     ╰───────────────┴───────────────┴───────────────╯
             >;
-            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
+            sensor-bindings = <&inc_dec_kp PG_UP PG_DN>;
         };
     };
 };
