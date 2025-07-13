@@ -45,9 +45,9 @@ ZMK_TAP_DANCE(layerdance, bindings = <&tog 4>, <&tog 5>;
               
 // Настройка поведения клавиш home-row mods для левой руки
 ZMK_HOLD_TAP(hml,
-    flavor = "balanced";
+    flavor = "tap-preferred";
     tapping-term-ms = <200>;
-    require-prior-idle-ms = <QUICK_TAP_MS>;
+    quick-tap-ms = <QUICK_TAP_MS>;
     hold-trigger-key-positions = <KEYS_R THUMBS>;
     hold-trigger-on-release;
     bindings = <&kp>, <&kp>;
@@ -55,9 +55,9 @@ ZMK_HOLD_TAP(hml,
 
 // Настройка поведения клавиш home-row mods для правой руки
 ZMK_HOLD_TAP(hmr,
-    flavor = "balanced";
+    flavor = "tap-preferred";
     tapping-term-ms = <200>;
-    require-prior-idle-ms = <QUICK_TAP_MS>;
+    quick-tap-ms = <QUICK_TAP_MS>;
     hold-trigger-key-positions = <KEYS_L THUMBS>;
     hold-trigger-on-release;
     bindings = <&kp>, <&kp>;
