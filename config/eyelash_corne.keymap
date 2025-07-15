@@ -114,9 +114,9 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
             r_ws { sequence = <L>; bindings = <&kp LC(LG(RIGHT_ARROW))>; };
             l_ws { sequence = <H>; bindings = <&kp LC(LG(LEFT_ARROW))>; };
             ctrl_tab_d_seq { sequence = <D>; bindings = <&ctrl_tab_d>; };
-            ws1 { sequence = <Q>; bindings = <&kp LC(1)>; };
-            ws2 { sequence = <W>; bindings = <&kp LC(2)>; };
-            ws3 { sequence = <E>; bindings = <&kp LC(3)>; };
+            ws1 { sequence = <Q>; bindings = <&kp LC(N1)>; };
+            ws2 { sequence = <W>; bindings = <&kp LC(N2)>; };
+            ws3 { sequence = <E>; bindings = <&kp LC(N3)>; };
         };
     };
 
@@ -439,7 +439,7 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
 //├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤                            ╭───────────────┼───────────────┼───────────────╮        ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
     &trans          &kp F6          &kp F7          &kp F8          &kp F9          &kp F10                                      &kp LEFT        &kp ENTER       &kp RIGHT                &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW   &kp RIGHT_ARROW  &trans          &trans
 //├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤    ╭───────────────╮       ╰───────────────┼───────────────┼───────────────╯        ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
-    &trans          &kp F12         &kp F13         &kp F14         &kp F15         &kp F16              &kp C_MUTE                              &kp DOWN                                 &trans          &kp END         &kp PAGE_DOWN   &trans          &trans          &trans
+    &trans          &kp F11         &kp F12         &kp F13         &kp F14         &kp F15              &kp C_MUTE                              &kp DOWN                                 &trans          &kp END         &kp PAGE_DOWN   &trans          &trans          &trans
 //╰───────────────┴───────────────┴───────────────┼───────────────┼───────────────┼───────────────┤    ╰───────────────╯                       ╰───────────────╯                        ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────╯
                                                     &trans          &trans          &trans                                                                                                &trans          &trans          &trans
 //                                                ╰───────────────┴───────────────┴───────────────╯                                                                                     ╰───────────────┴───────────────┴───────────────╯
