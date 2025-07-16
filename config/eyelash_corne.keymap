@@ -42,6 +42,10 @@ ZMK_TAP_DANCE(copy_cut, bindings = <&kp LG(C)>, <&kp LG(X)>;
 // Переключение слоев по двойному нажатию
 ZMK_TAP_DANCE(layerdance, bindings = <&tog 4>, <&tog 5>;
               tapping-term-ms = <200>;)
+
+// удержание или одиночное нажатие - LGUI, двойное нажатие - ENTER
+ZMK_TAP_DANCE(td_gui_ret, bindings = <&kp LGUI>, <&kp ENTER>;
+              tapping-term-ms = <200>;)
               
 // Настройка поведения клавиш home-row mods для левой руки
 ZMK_HOLD_TAP(hml,
@@ -130,6 +134,14 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
             flavor = "hold-preferred";
             tapping-term-ms = <200>;
             bindings = <&mo>, <&to>;
+        };
+        gui_ret: gui_ret {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <QUICK_TAP_MS>;
+            bindings = <&kp>, <&td_gui_ret>;
         };
     };
 
@@ -369,7 +381,7 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
 //├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤    ╭───────────────╮       ╰───────────────┼───────────────┼───────────────╯        ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
     &leader1        &kp Z           &kp X           &kp C           &kp V           &kp B                &kp C_MUTE                             &kp LA(LC(LG(D)))                         &kp N           &kp M           &kp COMMA       &kp DOT         &kp FSLH        &to GAME
 //╰───────────────┴───────────────┴───────────────┼───────────────┼───────────────┼───────────────┤    ╰───────────────╯                       ╰───────────────╯                        ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────╯
-                                                    &kp LGUI      &sym_num SYM NUM  &kp SPACE                                                                                           &lt ARROWS ENTER  SMART_NUM       &kp RGUI
+                                              &gui_ret LGUI ENTER  &sym_num SYM NUM  &kp SPACE                                                                                          &lt ARROWS ENTER  SMART_NUM       &kp RGUI
 //                                                ╰───────────────┴───────────────┴───────────────╯                                                                                     ╰───────────────┴───────────────┴───────────────╯
             >;
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
