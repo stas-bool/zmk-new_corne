@@ -114,9 +114,15 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
             r_ws { sequence = <L>; bindings = <&kp LC(LG(RIGHT_ARROW))>; };
             l_ws { sequence = <H>; bindings = <&kp LC(LG(LEFT_ARROW))>; };
             ctrl_tab_d_seq { sequence = <D>; bindings = <&ctrl_tab_d>; };
-            ws1 { sequence = <Q>; bindings = <&kp LC(N1)>; };
-            ws2 { sequence = <W>; bindings = <&kp LC(N2)>; };
-            ws3 { sequence = <E>; bindings = <&kp LC(N3)>; };
+            ws1 { sequence = <Z>; bindings = <&kp LC(N1)>; };
+            ws2 { sequence = <X>; bindings = <&kp LC(N2)>; };
+
+            cmd_0 { sequence = <GT>; bindings = <&kp LG(N0)>; };
+            cmd_1 { sequence = <LPAR>; bindings = <&kp LG(N1)>; };
+            cmd_2 { sequence = <LBRC>; bindings = <&kp LG(N2)>; };
+            cmd_3 { sequence = <LBKT>; bindings = <&kp LG(N3)>; };
+            cmd_4 { sequence = <DOT>; bindings = <&kp LG(N4)>; };
+            cmd_5 { sequence = <COLON>; bindings = <&kp LG(N5)>; };
         };
     };
 
@@ -367,13 +373,13 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
             display-name = "Symbols";
             bindings = <
 //╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮                                            ╭───────────────╮                        ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮
-    &leader1        &kp EXCL        &kp AT          &kp POUND       &kp DOLLAR      &kp PERCENT                                                  &kp LA(LC(E))                            &kp CARET       &kp AMPS        &kp ASTRK       &kp SLASH       &kp BSLH        &kp DEL
+    &kp LT          &kp EXCL        &kp AT          &kp POUND       &kp DOLLAR      &kp PERCENT                                                  &kp LA(LC(E))                            &kp CARET       &kp AMPS        &kp ASTRK       &kp SLASH       &kp BSLH        &kp DEL
 //├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤                            ╭───────────────┼───────────────┼───────────────╮        ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
-    &kp LT          &kp LPAR        &kp LBRC        &kp LBKT        &kp DOT         &kp COLON                                   &kp F13    &kp LA(LC(LG(UP_ARROW))) &kp F14               &kp UNDER       &kp PIPE        &kp EQUAL       &kp SQT         &kp GRAVE       &kp PG_UP
+    &kp GT          &kp LPAR        &kp LBRC        &kp LBKT        &kp DOT         &kp COLON                                   &kp F13    &kp LA(LC(LG(UP_ARROW))) &kp F14               &kp UNDER       &kp PIPE        &kp EQUAL       &kp SQT         &kp GRAVE       &kp PG_UP
 //├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤    ╭───────────────╮       ╰───────────────┼───────────────┼───────────────╯        ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
-    &kp GT          &kp RPAR        &kp RBRC        &kp RBKT        &kp COMMA       &kp SEMI             &kp C_MUTE                              &kp LA(LC(D))                            &kp MINUS       &kp PLUS        &kp QMARK       &kp DQT         &kp TILDE       &trans
+    &leader1        &kp RPAR        &kp RBRC        &kp RBKT        &kp COMMA       &kp SEMI             &kp C_MUTE                              &kp LA(LC(D))                            &kp MINUS       &kp PLUS        &kp QMARK       &kp DQT         &kp TILDE       &trans
 //╰───────────────┴───────────────┴───────────────┼───────────────┼───────────────┼───────────────┤    ╰───────────────╯                       ╰───────────────╯                        ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────╯
-                                                    &trans          &trans          &trans                                                                                                &kp INS         &kp DEL         &trans
+                                                    &trans          &trans          &kp ENTER                                                                                             &kp INS         &kp DEL         &trans
 //                                                ╰───────────────┴───────────────┴───────────────╯                                                                                     ╰───────────────┴───────────────┴───────────────╯
             >;
             sensor-bindings = <&inc_dec_kp C_BRIGHTNESS_INC C_BRIGHTNESS_DEC>;
