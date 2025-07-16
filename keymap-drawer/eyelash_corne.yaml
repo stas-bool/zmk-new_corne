@@ -43,7 +43,7 @@ layers:
   - {t: ., s: '>'}
   - {t: /, s: '?'}
   - {t: Game, h: toggle}
-  - LGUI
+  - {t: '&td_gui_ret ENTER', h: LGUI}
   - {t: Num, h: Symbols}
   - $$mdi:keyboard-space$$
   - {t: '$$mdi:keyboard-return$$', h: Arrows}
