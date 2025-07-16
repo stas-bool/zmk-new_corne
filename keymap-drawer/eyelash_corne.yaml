@@ -50,7 +50,7 @@ layers:
   - '&smart_num 2 0'
   - RGUI
   Symbols:
-  - '&leader1'
+  - <
   - '!'
   - '@'
   - '#'
@@ -63,7 +63,7 @@ layers:
   - {t: /, s: '?'}
   - {t: \, s: '|'}
   - $$mdi:backspace-reverse-outline$$
-  - <
+  - '>'
   - (
   - '{'
   - {t: '[', s: '{'}
@@ -78,7 +78,7 @@ layers:
   - {t: '''', s: '"'}
   - {t: '`', s: '~'}
   - PG UP
-  - '>'
+  - '&leader1'
   - )
   - '}'
   - {t: ']', s: '}'}
@@ -94,7 +94,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {type: held}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:keyboard-return$$', type: enter}
   - INS
   - $$mdi:backspace-reverse-outline$$
   - {t: '$$mdi:transfer$$', type: trans}
