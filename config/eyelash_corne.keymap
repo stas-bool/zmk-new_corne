@@ -46,6 +46,10 @@ ZMK_TAP_DANCE(layerdance, bindings = <&tog 4>, <&tog 5>;
 // удержание или одиночное нажатие - LGUI, двойное нажатие - ENTER
 ZMK_TAP_DANCE(td_gui_ret, bindings = <&kp LGUI>, <&kp ENTER>;
               tapping-term-ms = <200>;)
+
+// удержание или одиночное нажатие - LGUI, двойное нажатие - SPACE
+ZMK_TAP_DANCE(td_gui_spc, bindings = <&kp LGUI>, <&kp SPACE>;
+              tapping-term-ms = <200>;)
               
 // Настройка поведения клавиш home-row mods для левой руки
 ZMK_HOLD_TAP(hml,
@@ -449,7 +453,7 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
 //├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤    ╭───────────────╮       ╰───────────────┼───────────────┼───────────────╯        ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
     &kp LSHFT       &kp Z           &kp X           &kp C           &kp V           &kp B                &kp C_MUTE                              &kp DOWN                                 &kp N           &kp M           &kp COMMA       &kp DOT         &kp FSLH        &to BASE
 //╰───────────────┴───────────────┴───────────────┼───────────────┼───────────────┼───────────────┤    ╰───────────────╯                       ╰───────────────╯                        ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────╯
-                                                    &kp LGUI        &mo SYM         &kp SPACE                                                                                             &kp ENTER       &mo NUM         &kp RALT
+                                                    &kp LCTRL       &kp LALT        &td_gui_spc                                                                                           &kp ENTER       &mo NUM         &kp RALT
 //                                                ╰───────────────┴───────────────┴───────────────╯                                                                                     ╰───────────────┴───────────────┴───────────────╯
             >;
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
