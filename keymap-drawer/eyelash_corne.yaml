@@ -239,9 +239,9 @@ layers:
   - {t: ., s: '>'}
   - {t: /, s: '?'}
   - {t: Base, h: toggle}
-  - LGUI
-  - Symbols
-  - $$mdi:keyboard-space$$
+  - $$mdi:apple-keyboard-control$$
+  - $$mdi:apple-keyboard-option$$
+  - '&td_gui_spc'
   - {t: '$$mdi:keyboard-return$$', type: enter}
   - Num
   - $$mdi:apple-keyboard-option$$
