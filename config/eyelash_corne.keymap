@@ -46,9 +46,9 @@ ZMK_TAP_DANCE(layerdance, bindings = <&tog 4>, <&tog 5>;
 // удержание или одиночное нажатие - LGUI, двойное нажатие - ENTER
 ZMK_TAP_DANCE(td_gui_ret, bindings = <&kp LGUI>, <&kp ENTER>;
               tapping-term-ms = <200>;)
-
-// удержание или одиночное нажатие - LGUI, двойное нажатие - SPACE
-ZMK_TAP_DANCE(td_gui_spc, bindings = <&kp LGUI>, <&kp SPACE>;
+              
+// удержание или одиночное нажатие - LCTRL, двойное нажатие - SPACE
+ZMK_TAP_DANCE(td_ctrl_spc, bindings = <&kp LCTRL>, <&kp SPACE>;
               tapping-term-ms = <200>;)
               
 // Настройка поведения клавиш home-row mods для левой руки
@@ -190,6 +190,7 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
             bindings = <&copy_cut>;
             key-positions = <LB2 LB3>;
             timeout-ms = <20>;
+            layers = <BASE SYM NUM SYSTEM ARROWS>;
         };
 
         // CV вставить (C + V)
@@ -197,6 +198,7 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
             bindings = <&kp LG(V)>;
             key-positions = <LB1 LB2>;
             timeout-ms = <20>;
+            layers = <BASE SYM NUM SYSTEM ARROWS>;
         };
 
         // ZX ` обратная кавычка
@@ -204,6 +206,7 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
             bindings = <&kp GRAVE>;
             key-positions = <LB4 LB3>;
             timeout-ms = <20>;
+            layers = <BASE SYM NUM SYSTEM ARROWS>;
         };
 
         // ZV повторить (Z + V)
@@ -211,6 +214,7 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
             bindings = <&kp LG(LS(Z))>;
             key-positions = <LB4 LB1>;
             timeout-ms = <20>;
+            layers = <BASE SYM NUM SYSTEM ARROWS>;
         };
         
         //// Нижний ряд (справа)
@@ -242,6 +246,7 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
             bindings = <&kp LESS_THAN>;
             key-positions = <LT4 LT3>;
             timeout-ms = <20>;
+            layers = <BASE SYM NUM SYSTEM ARROWS>;
         };
         
         // WE левая фигурная скобка
@@ -249,6 +254,7 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
             bindings = <&kp LEFT_BRACE>;
             key-positions = <LT3 LT2>;
             timeout-ms = <20>;
+            layers = <BASE SYM NUM SYSTEM ARROWS>;
         };
         
         // ER ' апостроф/одинарная кавычка
@@ -256,6 +262,7 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
             bindings = <&kp SINGLE_QUOTE>;
             key-positions = <LT2 LT1>;
             timeout-ms = <20>;
+            layers = <BASE SYM NUM SYSTEM ARROWS>;
         };
         
         // combo_lt1_lt0 {
@@ -310,6 +317,7 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
             bindings = <&kp LEFT_BRACKET>;
             key-positions = <LM4 LM3>;
             timeout-ms = <20>;
+            layers = <BASE SYM NUM SYSTEM ARROWS>;
         };
         
         // SD левая круглая скобка 
@@ -317,6 +325,7 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
             bindings = <&kp LEFT_PARENTHESIS>;
             key-positions = <LM3 LM2>;
             timeout-ms = <20>;
+            layers = <BASE SYM NUM SYSTEM ARROWS>;
         };
         
         // DF ^
@@ -324,6 +333,7 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
             bindings = <&kp CARET>;
             key-positions = <LM2 LM1>;
             timeout-ms = <20>;
+            layers = <BASE SYM NUM SYSTEM ARROWS>;
         };
         
         // FG минус/тире/дефис
@@ -331,6 +341,7 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
             bindings = <&kp MINUS>;
             key-positions = <LM1 LM0>;
             timeout-ms = <20>;
+            layers = <BASE SYM NUM SYSTEM ARROWS>;
         };
 
         //// Средний ряд (справа)
@@ -383,7 +394,7 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
 //├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤                            ╭───────────────┼───────────────┼───────────────╮        ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
     &kp ESC         &hml LSHFT A    &hml LCTRL S    &hml LALT D     &hml LGUI F     &kp G                            &kp LC(LA(LEFT_ARROW)) &kp LA(LC(UP_ARROW)) &kp LC(LA(RIGHT_ARROW))  &kp H           &hmr LGUI J     &hmr LALT K    &hmr LCTRL L     &hmr LSHFT SEMI &kp SQT
 //├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤    ╭───────────────╮       ╰───────────────┼───────────────┼───────────────╯        ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
-    &leader1        &kp Z           &kp X           &kp C           &kp V           &kp B                &kp C_MUTE                             &kp LA(LC(LG(D)))                         &kp N           &kp M           &kp COMMA       &kp DOT         &kp FSLH        &to GAME
+    &leader1        &kp Z           &kp X           &kp C           &kp V           &kp B                &kp C_MUTE                             &kp LA(LC(LG(D)))                         &kp N           &kp M           &kp COMMA       &kp DOT         &kp FSLH        &tog GAME
 //╰───────────────┴───────────────┴───────────────┼───────────────┼───────────────┼───────────────┤    ╰───────────────╯                       ╰───────────────╯                        ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────╯
                                               &gui_ret LGUI ENTER  &sym_num SYM NUM  &kp SPACE                                                                                          &lt ARROWS ENTER  SMART_NUM       &kp RGUI
 //                                                ╰───────────────┴───────────────┴───────────────╯                                                                                     ╰───────────────┴───────────────┴───────────────╯
@@ -451,9 +462,9 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
 //├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤                            ╭───────────────┼───────────────┼───────────────╮        ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
     &kp ESC         &kp A           &kp S           &kp D           &kp F           &kp G                                        &kp LEFT        &kp ENTER       &kp RIGHT                &kp H           &kp J           &kp K           &kp L           &kp SEMI        &kp SQT
 //├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤    ╭───────────────╮       ╰───────────────┼───────────────┼───────────────╯        ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
-    &kp LSHFT       &kp Z           &kp X           &kp C           &kp V           &kp B                &kp C_MUTE                              &kp DOWN                                 &kp N           &kp M           &kp COMMA       &kp DOT         &kp FSLH        &to BASE
+    &kp LSHFT       &kp Z           &kp X           &kp C           &kp V           &kp B                &kp C_MUTE                              &kp DOWN                                 &kp N           &kp M           &kp COMMA       &kp DOT         &kp FSLH        &tog BASE
 //╰───────────────┴───────────────┴───────────────┼───────────────┼───────────────┼───────────────┤    ╰───────────────╯                       ╰───────────────╯                        ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────╯
-                                                    &kp LCTRL       &kp LALT        &td_gui_spc                                                                                           &kp ENTER       &mo NUM         &kp RALT
+                                                    &td_gui_ret     &kp LALT        &td_ctrl_spc                                                                                          &kp ENTER       &mo NUM         &kp RALT
 //                                                ╰───────────────┴───────────────┴───────────────╯                                                                                     ╰───────────────┴───────────────┴───────────────╯
             >;
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
