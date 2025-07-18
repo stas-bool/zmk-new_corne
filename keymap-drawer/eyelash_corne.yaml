@@ -69,9 +69,9 @@ layers:
   - {t: '[', s: '{'}
   - {t: ., s: '>'}
   - ':'
-  - F22
+  - F18
   - Alt+Ctl+Gui+$$mdi:arrow-up-bold$$
-  - F23
+  - F19
   - _
   - '|'
   - {t: '=', s: +}
