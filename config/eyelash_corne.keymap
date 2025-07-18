@@ -81,7 +81,7 @@ ZMK_HOLD_TAP(hmr,
 // Удерживаете клавишу - временный доступ к цифровому слою
 // Одно нажатие - цифровой слой активен пока вводите цифры
 // Двойное нажатие - цифровой слой активен для следующего, одного нажатия
-#define SMART_NUM &smart_num NUM 0
+#define SMART_NUM &smart_num NUM BASE
 ZMK_HOLD_TAP(smart_num, bindings = <&mo>, <&num_dance>; flavor = "balanced";
              tapping-term-ms = <200>; quick-tap-ms = <QUICK_TAP_MS>;)
 ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
@@ -124,6 +124,9 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
             ctrl_tab_d_seq { sequence = <D>; bindings = <&ctrl_tab_d>; };
             ws1 { sequence = <Z>; bindings = <&kp LC(N1)>; };
             ws2 { sequence = <X>; bindings = <&kp LC(N2)>; };
+
+            to_arrows { sequence = <A>; bindings = <&to ARROWS>; };
+            arrows_2_base { sequence = <F6>; bindings = <&to BASE>; };
 
             cmd_0 { sequence = <GT>; bindings = <&kp LG(N0)>; };
             cmd_1 { sequence = <LPAR>; bindings = <&kp LG(N1)>; };
@@ -219,10 +222,10 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
         
         //// Нижний ряд (справа)
         
-        // 00<переработка> ~ тильда
-        combo_TILDE {
-            bindings = <&kp TILDE>;
-            key-positions = <RB3 RB4>;
+        // N, M test 1
+        combo_test_rb0_rb1 {
+            bindings = <&kp N1>;
+            key-positions = <RB0 RB1>;
             timeout-ms = <20>;
         };
         
@@ -230,6 +233,27 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
         combo_ampersand {
             bindings = <&kp AMPERSAND>;
             key-positions = <RB1 RB2>;
+            timeout-ms = <20>;
+        };
+        
+        // точка и 00 test 2
+        combo_test_rb2_rb3 {
+            bindings = <&kp N2>;
+            key-positions = <RB2 RB3>;
+            timeout-ms = <20>;
+        };
+        
+        // 00<переработка> ~ тильда
+        combo_TILDE {
+            bindings = <&kp TILDE>;
+            key-positions = <RB3 RB4>;
+            timeout-ms = <20>;
+        };
+        
+        // переработка и трифорс test 3
+        combo_test_rb4_rb5 {
+            bindings = <&kp N3>;
+            key-positions = <RB4 RB5>;
             timeout-ms = <20>;
         };
         
@@ -462,7 +486,7 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
 //├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤                            ╭───────────────┼───────────────┼───────────────╮        ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
     &kp ESC         &kp A           &kp S           &kp D           &kp F           &kp G                                        &kp LEFT        &kp ENTER       &kp RIGHT                &kp H           &kp J           &kp K           &kp L           &kp SEMI        &kp SQT
 //├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤    ╭───────────────╮       ╰───────────────┼───────────────┼───────────────╯        ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
-    &kp LSHFT       &kp Z           &kp X           &kp C           &kp V           &kp B                &kp C_MUTE                              &kp DOWN                                 &kp N           &kp M           &kp COMMA       &kp DOT         &kp FSLH        &tog BASE
+    &kp LSHFT       &kp Z           &kp X           &kp C           &kp V           &kp B                &kp C_MUTE                              &kp DOWN                                 &kp N           &kp M           &kp COMMA       &kp DOT         &kp FSLH        &tog GAME
 //╰───────────────┴───────────────┴───────────────┼───────────────┼───────────────┼───────────────┤    ╰───────────────╯                       ╰───────────────╯                        ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────╯
                                                     &td_gui_ret     &kp LALT        &td_ctrl_spc                                                                                          &kp ENTER       &mo NUM         &kp RALT
 //                                                ╰───────────────┴───────────────┴───────────────╯                                                                                     ╰───────────────┴───────────────┴───────────────╯
