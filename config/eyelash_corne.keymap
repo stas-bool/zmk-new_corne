@@ -186,6 +186,243 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
     combos {
         compatible = "zmk,combos";
 
+        // Тестовые комбо для определения позиций в матрице
+        test_pos_0 {
+            bindings = <&kp N0>;
+            key-positions = <0>;
+            timeout-ms = <20>;
+        };
+        test_pos_1 {
+            bindings = <&kp N1>;
+            key-positions = <1>;
+            timeout-ms = <20>;
+        };
+        test_pos_2 {
+            bindings = <&kp N2>;
+            key-positions = <2>;
+            timeout-ms = <20>;
+        };
+        test_pos_3 {
+            bindings = <&kp N3>;
+            key-positions = <3>;
+            timeout-ms = <20>;
+        };
+        test_pos_4 {
+            bindings = <&kp N4>;
+            key-positions = <4>;
+            timeout-ms = <20>;
+        };
+        test_pos_5 {
+            bindings = <&kp N5>;
+            key-positions = <5>;
+            timeout-ms = <20>;
+        };
+        test_pos_6 {
+            bindings = <&kp N6>;
+            key-positions = <6>;
+            timeout-ms = <20>;
+        };
+        test_pos_7 {
+            bindings = <&kp N7>;
+            key-positions = <7>;
+            timeout-ms = <20>;
+        };
+        test_pos_8 {
+            bindings = <&kp N8>;
+            key-positions = <8>;
+            timeout-ms = <20>;
+        };
+        test_pos_9 {
+            bindings = <&kp N9>;
+            key-positions = <9>;
+            timeout-ms = <20>;
+        };
+        test_pos_10 {
+            bindings = <&kp N0>;
+            key-positions = <10>;
+            timeout-ms = <20>;
+        };
+        test_pos_11 {
+            bindings = <&kp N1>;
+            key-positions = <11>;
+            timeout-ms = <20>;
+        };
+        test_pos_12 {
+            bindings = <&kp N2>;
+            key-positions = <12>;
+            timeout-ms = <20>;
+        };
+        test_pos_13 {
+            bindings = <&kp N3>;
+            key-positions = <13>;
+            timeout-ms = <20>;
+        };
+        test_pos_14 {
+            bindings = <&kp N4>;
+            key-positions = <14>;
+            timeout-ms = <20>;
+        };
+        test_pos_15 {
+            bindings = <&kp N5>;
+            key-positions = <15>;
+            timeout-ms = <20>;
+        };
+        test_pos_16 {
+            bindings = <&kp N6>;
+            key-positions = <16>;
+            timeout-ms = <20>;
+        };
+        test_pos_17 {
+            bindings = <&kp N7>;
+            key-positions = <17>;
+            timeout-ms = <20>;
+        };
+        test_pos_18 {
+            bindings = <&kp N8>;
+            key-positions = <18>;
+            timeout-ms = <20>;
+        };
+        test_pos_19 {
+            bindings = <&kp N9>;
+            key-positions = <19>;
+            timeout-ms = <20>;
+        };
+        test_pos_20 {
+            bindings = <&kp N0>;
+            key-positions = <20>;
+            timeout-ms = <20>;
+        };
+        test_pos_21 {
+            bindings = <&kp N1>;
+            key-positions = <21>;
+            timeout-ms = <20>;
+        };
+        test_pos_22 {
+            bindings = <&kp N2>;
+            key-positions = <22>;
+            timeout-ms = <20>;
+        };
+        test_pos_23 {
+            bindings = <&kp N3>;
+            key-positions = <23>;
+            timeout-ms = <20>;
+        };
+        test_pos_24 {
+            bindings = <&kp N4>;
+            key-positions = <24>;
+            timeout-ms = <20>;
+        };
+        test_pos_25 {
+            bindings = <&kp N5>;
+            key-positions = <25>;
+            timeout-ms = <20>;
+        };
+        test_pos_26 {
+            bindings = <&kp N6>;
+            key-positions = <26>;
+            timeout-ms = <20>;
+        };
+        test_pos_27 {
+            bindings = <&kp N7>;
+            key-positions = <27>;
+            timeout-ms = <20>;
+        };
+        test_pos_28 {
+            bindings = <&kp N8>;
+            key-positions = <28>;
+            timeout-ms = <20>;
+        };
+        test_pos_29 {
+            bindings = <&kp N9>;
+            key-positions = <29>;
+            timeout-ms = <20>;
+        };
+        test_pos_30 {
+            bindings = <&kp N0>;
+            key-positions = <30>;
+            timeout-ms = <20>;
+        };
+        test_pos_31 {
+            bindings = <&kp N1>;
+            key-positions = <31>;
+            timeout-ms = <20>;
+        };
+        test_pos_32 {
+            bindings = <&kp N2>;
+            key-positions = <32>;
+            timeout-ms = <20>;
+        };
+        test_pos_33 {
+            bindings = <&kp N3>;
+            key-positions = <33>;
+            timeout-ms = <20>;
+        };
+        test_pos_34 {
+            bindings = <&kp N4>;
+            key-positions = <34>;
+            timeout-ms = <20>;
+        };
+        test_pos_35 {
+            bindings = <&kp N5>;
+            key-positions = <35>;
+            timeout-ms = <20>;
+        };
+        test_pos_36 {
+            bindings = <&kp N6>;
+            key-positions = <36>;
+            timeout-ms = <20>;
+        };
+        test_pos_37 {
+            bindings = <&kp N7>;
+            key-positions = <37>;
+            timeout-ms = <20>;
+        };
+        test_pos_38 {
+            bindings = <&kp N8>;
+            key-positions = <38>;
+            timeout-ms = <20>;
+        };
+        test_pos_39 {
+            bindings = <&kp N9>;
+            key-positions = <39>;
+            timeout-ms = <20>;
+        };
+        test_pos_40 {
+            bindings = <&kp N0>;
+            key-positions = <40>;
+            timeout-ms = <20>;
+        };
+        test_pos_41 {
+            bindings = <&kp N1>;
+            key-positions = <41>;
+            timeout-ms = <20>;
+        };
+        test_pos_42 {
+            bindings = <&kp N2>;
+            key-positions = <42>;
+            timeout-ms = <20>;
+        };
+        test_pos_43 {
+            bindings = <&kp N3>;
+            key-positions = <43>;
+            timeout-ms = <20>;
+        };
+        test_pos_44 {
+            bindings = <&kp N4>;
+            key-positions = <44>;
+            timeout-ms = <20>;
+        };
+        test_pos_45 {
+            bindings = <&kp N5>;
+            key-positions = <45>;
+            timeout-ms = <20>;
+        };
+        test_pos_46 {
+            bindings = <&kp N6>;
+            key-positions = <46>;
+            timeout-ms = <20>;
+        };
+
         //// Нижний ряд (слева)
 
         // копировать/вырезать (X + C)
