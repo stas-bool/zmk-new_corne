@@ -69,9 +69,9 @@ layers:
   - {t: '[', s: '{'}
   - {t: ., s: '>'}
   - ':'
-  - F13
+  - F22
   - Alt+Ctl+Gui+$$mdi:arrow-up-bold$$
-  - F14
+  - F23
   - _
   - '|'
   - {t: '=', s: +}
@@ -246,7 +246,7 @@ layers:
   - Num
   - $$mdi:apple-keyboard-option$$
   Arrows:
-  - {t: '$$mdi:transfer$$', type: trans}
+  - F16
   - F1
   - F2
   - F3
@@ -259,7 +259,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - F17
   - F6
   - F7
   - F8
@@ -274,7 +274,7 @@ layers:
   - $$mdi:arrow-right-bold$$
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - F18
   - F11
   - F12
   - F13
@@ -295,79 +295,56 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
 combos:
-- p: [0, 1]
-  k: {t: '1', s: '!'}
-- p: [1, 2]
-  k: {t: '2', s: '@'}
-- p: [2, 3]
-  k: {t: '3', s: '#'}
-- p: [3, 4]
-  k: {t: '4', s: $}
-- p: [4, 5]
-  k: {t: '5', s: '%'}
-- p: [6, 7]
-  k: {t: '6', s: ^}
-- p: [7, 8]
-  k: {t: '7', s: '&'}
-- p: [8, 9]
-  k: {t: '8', s: '*'}
-- p: [9, 10]
-  k: {t: '9', s: (}
-- p: [10, 11]
-  k: {t: '0', s: )}
-- p: [11, 12]
-  k: {t: '1', s: '!'}
-- p: [13, 14]
-  k: {t: '2', s: '@'}
-- p: [14, 15]
-  k: {t: '3', s: '#'}
-- p: [15, 16]
-  k: {t: '4', s: $}
-- p: [16, 17]
-  k: {t: '5', s: '%'}
-- p: [17, 18]
-  k: {t: '6', s: ^}
-- p: [19, 20]
-  k: {t: '7', s: '&'}
-- p: [20, 21]
-  k: {t: '8', s: '*'}
-- p: [22, 23]
-  k: {t: '9', s: (}
-- p: [23, 24]
-  k: {t: '0', s: )}
-- p: [24, 25]
-  k: {t: '1', s: '!'}
-- p: [25, 26]
-  k: {t: '2', s: '@'}
-- p: [26, 27]
-  k: {t: '3', s: '#'}
-- p: [28, 29]
-  k: {t: '4', s: $}
-- p: [29, 30]
-  k: {t: '5', s: '%'}
 - p: [30, 31]
-  k: {t: '6', s: ^}
-- p: [31, 32]
-  k: {t: '7', s: '&'}
+  k: {t: '`', s: '~'}
+  l: [Base, Symbols, Num, System, Arrows]
+- p: [32, 31]
+  k: {t: V, h: '$$mdi:apple-keyboard-command$$'}
+  l: [Base, Symbols, Num, System, Arrows]
 - p: [32, 33]
-  k: {t: '8', s: '*'}
-- p: [34, 35]
-  k: {t: '9', s: (}
-- p: [35, 36]
-  k: {t: '0', s: )}
+  k: {t: '[', s: '{'}
+  l: [Base, Symbols, Num, System, Arrows]
+- p: [29, 32]
+  k: Gui+Sft+Z
+  l: [Base, Symbols, Num, System, Arrows]
 - p: [36, 37]
-  k: {t: '1', s: '!'}
+  k: {t: ']', s: '}'}
+  l: [Base, Symbols, Num, System, Arrows]
 - p: [37, 38]
-  k: {t: '2', s: '@'}
+  k: '&'
+  l: [Base, Symbols, Num, System, Arrows]
 - p: [38, 39]
-  k: {t: '3', s: '#'}
-- p: [39, 40]
-  k: {t: '4', s: $}
-- p: [41, 42]
-  k: {t: '5', s: '%'}
-- p: [42, 43]
-  k: {t: '6', s: ^}
-- p: [44, 45]
-  k: {t: '7', s: '&'}
-- p: [45, 46]
-  k: {t: '8', s: '*'}
+  k: '~'
+  l: [Base, Symbols, Num, System, Arrows]
+- p: [2, 3]
+  k: '{'
+  l: [Base, Symbols, Num, System, Arrows]
+- p: [3, 4]
+  k: {t: '''', s: '"'}
+  l: [Base, Symbols, Num, System, Arrows]
+- p: [4, 5]
+  k: '>'
+  l: [Base, Symbols, Num, System, Arrows]
+- p: [7, 8]
+  k: <
+- p: [8, 9]
+  k: '"'
+- p: [9, 10]
+  k: '}'
+- p: [15, 16]
+  k: (
+  l: [Base, Symbols, Num, System, Arrows]
+- p: [16, 17]
+  k: ^
+  l: [Base, Symbols, Num, System, Arrows]
+- p: [17, 18]
+  k: {h: '-', s: _}
+  l: [Base, Symbols, Num, System, Arrows]
+- p: [22, 23]
+  k: {t: '=', s: +}
+- p: [23, 24]
+  k: $
+- p: [24, 25]
+  k: )
+- p: [26, 27]
+  k: $$mdi:backspace-reverse-outline$$
