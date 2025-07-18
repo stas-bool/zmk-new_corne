@@ -238,7 +238,7 @@ layers:
   - {t: ',', s: <}
   - {t: ., s: '>'}
   - {t: /, s: '?'}
-  - {t: Base, h: toggle}
+  - {t: Game, h: toggle}
   - '&td_gui_ret'
   - $$mdi:apple-keyboard-option$$
   - '&td_ctrl_spc'
@@ -307,10 +307,16 @@ combos:
 - p: [29, 32]
   k: Gui+Sft+Z
   l: [Base, Symbols, Num, System, Arrows]
-- p: [38, 39]
-  k: '~'
+- p: [35, 36]
+  k: {t: '1', s: '!'}
 - p: [36, 37]
   k: '&'
+- p: [37, 38]
+  k: {t: '2', s: '@'}
+- p: [38, 39]
+  k: '~'
+- p: [39, 40]
+  k: {t: '3', s: '#'}
 - p: [1, 2]
   k: <
   l: [Base, Symbols, Num, System, Arrows]
