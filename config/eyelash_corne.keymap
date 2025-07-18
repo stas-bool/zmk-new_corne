@@ -186,210 +186,12 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
     combos {
         compatible = "zmk,combos";
 
-        // Тестовые комбо для определения позиций в матрице
-        // Верхний ряд (числа 0-12)
-        test_pos_0_1 {
-            bindings = <&kp N1>;
-            key-positions = <0 1>;
-            timeout-ms = <20>;
-        };
-        test_pos_1_2 {
-            bindings = <&kp N2>;
-            key-positions = <1 2>;
-            timeout-ms = <20>;
-        };
-        test_pos_2_3 {
-            bindings = <&kp N3>;
-            key-positions = <2 3>;
-            timeout-ms = <20>;
-        };
-        test_pos_3_4 {
-            bindings = <&kp N4>;
-            key-positions = <3 4>;
-            timeout-ms = <20>;
-        };
-        test_pos_4_5 {
-            bindings = <&kp N5>;
-            key-positions = <4 5>;
-            timeout-ms = <20>;
-        };
-        test_pos_6_7 {
-            bindings = <&kp N6>;
-            key-positions = <6 7>;
-            timeout-ms = <20>;
-        };
-        test_pos_7_8 {
-            bindings = <&kp N7>;
-            key-positions = <7 8>;
-            timeout-ms = <20>;
-        };
-        test_pos_8_9 {
-            bindings = <&kp N8>;
-            key-positions = <8 9>;
-            timeout-ms = <20>;
-        };
-        test_pos_9_10 {
-            bindings = <&kp N9>;
-            key-positions = <9 10>;
-            timeout-ms = <20>;
-        };
-        test_pos_10_11 {
-            bindings = <&kp N0>;
-            key-positions = <10 11>;
-            timeout-ms = <20>;
-        };
-        test_pos_11_12 {
-            bindings = <&kp N1>;
-            key-positions = <11 12>;
-            timeout-ms = <20>;
-        };
+        //// Нижний ряд (слева)
 
-        // Средний ряд (числа 13-27)
-        test_pos_13_14 {
-            bindings = <&kp N2>;
-            key-positions = <13 14>;
-            timeout-ms = <20>;
-        };
-        test_pos_14_15 {
-            bindings = <&kp N3>;
-            key-positions = <14 15>;
-            timeout-ms = <20>;
-        };
-        test_pos_15_16 {
-            bindings = <&kp N4>;
-            key-positions = <15 16>;
-            timeout-ms = <20>;
-        };
-        test_pos_16_17 {
-            bindings = <&kp N5>;
-            key-positions = <16 17>;
-            timeout-ms = <20>;
-        };
-        test_pos_17_18 {
-            bindings = <&kp N6>;
-            key-positions = <17 18>;
-            timeout-ms = <20>;
-        };
-        test_pos_19_20 {
-            bindings = <&kp N7>;
-            key-positions = <19 20>;
-            timeout-ms = <20>;
-        };
-        test_pos_20_21 {
-            bindings = <&kp N8>;
-            key-positions = <20 21>;
-            timeout-ms = <20>;
-        };
-        test_pos_22_23 {
-            bindings = <&kp N9>;
-            key-positions = <22 23>;
-            timeout-ms = <20>;
-        };
-        test_pos_23_24 {
-            bindings = <&kp N0>;
-            key-positions = <23 24>;
-            timeout-ms = <20>;
-        };
-        test_pos_24_25 {
-            bindings = <&kp N1>;
-            key-positions = <24 25>;
-            timeout-ms = <20>;
-        };
-        test_pos_25_26 {
-            bindings = <&kp N2>;
-            key-positions = <25 26>;
-            timeout-ms = <20>;
-        };
-        test_pos_26_27 {
-            bindings = <&kp N3>;
-            key-positions = <26 27>;
-            timeout-ms = <20>;
-        };
-
-        // Нижний ряд (числа 28-40)
-        test_pos_28_29 {
-            bindings = <&kp N4>;
-            key-positions = <28 29>;
-            timeout-ms = <20>;
-        };
-        test_pos_29_30 {
-            bindings = <&kp N5>;
-            key-positions = <29 30>;
-            timeout-ms = <20>;
-        };
-        test_pos_30_31 {
-            bindings = <&kp N6>;
-            key-positions = <30 31>;
-            timeout-ms = <20>;
-        };
-        test_pos_31_32 {
-            bindings = <&kp N7>;
-            key-positions = <31 32>;
-            timeout-ms = <20>;
-        };
-        test_pos_32_33 {
-            bindings = <&kp N8>;
-            key-positions = <32 33>;
-            timeout-ms = <20>;
-        };
-        test_pos_34_35 {
-            bindings = <&kp N9>;
-            key-positions = <34 35>;
-            timeout-ms = <20>;
-        };
-        test_pos_35_36 {
-            bindings = <&kp N0>;
-            key-positions = <35 36>;
-            timeout-ms = <20>;
-        };
-        test_pos_36_37 {
-            bindings = <&kp N1>;
-            key-positions = <36 37>;
-            timeout-ms = <20>;
-        };
-        test_pos_37_38 {
-            bindings = <&kp N2>;
-            key-positions = <37 38>;
-            timeout-ms = <20>;
-        };
-        test_pos_38_39 {
-            bindings = <&kp N3>;
-            key-positions = <38 39>;
-            timeout-ms = <20>;
-        };
-        test_pos_39_40 {
-            bindings = <&kp N4>;
-            key-positions = <39 40>;
-            timeout-ms = <20>;
-        };
-
-        // Большие пальцы (числа 41-46)
-        test_pos_41_42 {
-            bindings = <&kp N5>;
-            key-positions = <41 42>;
-            timeout-ms = <20>;
-        };
-        test_pos_42_43 {
-            bindings = <&kp N6>;
-            key-positions = <42 43>;
-            timeout-ms = <20>;
-        };
-        test_pos_44_45 {
-            bindings = <&kp N7>;
-            key-positions = <44 45>;
-            timeout-ms = <20>;
-        };
-        test_pos_45_46 {
-            bindings = <&kp N8>;
-            key-positions = <45 46>;
-            timeout-ms = <20>;
-        };
-
-        /* Существующие комбо (временно отключены для тестирования)
-        // копировать/вырезать (X + C)
-        copy_cut {
-            bindings = <&copy_cut>;
-            key-positions = <LB2 LB3>;
+        // XC ` обратная кавычка
+        combo_grave {
+            bindings = <&kp GRAVE>;
+            key-positions = <LB3 LB2>;
             timeout-ms = <20>;
             layers = <BASE SYM NUM SYSTEM ARROWS>;
         };
@@ -402,13 +204,20 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
             layers = <BASE SYM NUM SYSTEM ARROWS>;
         };
 
-        // ZX ` обратная кавычка
-        combo_grave {
-            bindings = <&kp GRAVE>;
-            key-positions = <LB4 LB3>;
+        // VB левая квадратная скобка [
+        combo_LEFT_BRACKET {
+            bindings = <&kp LEFT_BRACKET>;
+            key-positions = <LB1 LB0>;
             timeout-ms = <20>;
             layers = <BASE SYM NUM SYSTEM ARROWS>;
         };
+
+        // combo_ {
+        //     bindings = <&kp>;
+        //     key-positions = <LB4 LB3>;
+        //     timeout-ms = <20>;
+        //     layers = <BASE SYM NUM SYSTEM ARROWS>;
+        // };
 
         // ZV повторить (Z + V)
         redo {
@@ -420,11 +229,12 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
         
         //// Нижний ряд (справа)
         
-        // N, M test 1
-        combo_test_rb0_rb1 {
-            bindings = <&kp N1>;
+        // NM правая квадратная скобка ]
+        combo_RIGHT_BRACKET {
+            bindings = <&kp RIGHT_BRACKET>;
             key-positions = <RB0 RB1>;
             timeout-ms = <20>;
+            layers = <BASE SYM NUM SYSTEM ARROWS>;
         };
         
         // M, & амперсанд
@@ -432,28 +242,28 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
             bindings = <&kp AMPERSAND>;
             key-positions = <RB1 RB2>;
             timeout-ms = <20>;
+            layers = <BASE SYM NUM SYSTEM ARROWS>;
         };
         
-        // точка и 00 test 2
-        combo_test_rb2_rb3 {
-            bindings = <&kp N2>;
-            key-positions = <RB2 RB3>;
-            timeout-ms = <20>;
-        };
-        
-        // 00<переработка> ~ тильда
+        // точка и 00 ~ тильда
         combo_TILDE {
             bindings = <&kp TILDE>;
-            key-positions = <RB3 RB4>;
+            key-positions = <RB2 RB3>;
             timeout-ms = <20>;
+            layers = <BASE SYM NUM SYSTEM ARROWS>;
         };
-        
-        // переработка и трифорс test 3
-        combo_test_rb4_rb5 {
-            bindings = <&kp N3>;
-            key-positions = <RB4 RB5>;
-            timeout-ms = <20>;
-        };
+
+        // combo_ {
+        //     bindings = <&kp >;
+        //     key-positions = <RB3 RB4>;
+        //     timeout-ms = <20>;
+        // };
+
+        // combo_test_rb4_rb5 {
+        //     bindings = <&kp N3>;
+        //     key-positions = <RB4 RB5>;
+        //     timeout-ms = <20>;
+        // };
         
         //// Верхний ряд (слева)
 
@@ -463,13 +273,13 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
         //     timeout-ms = <20>;
         // };
         
-        // QW знак меньше < 
-        combo_LESS_THAN {
-            bindings = <&kp LESS_THAN>;
-            key-positions = <LT4 LT3>;
-            timeout-ms = <20>;
-            layers = <BASE SYM NUM SYSTEM ARROWS>;
-        };
+        // QW
+        // combo_ {
+        //     bindings = <&kp >;
+        //     key-positions = <LT4 LT3>;
+        //     timeout-ms = <20>;
+        //     layers = <BASE SYM NUM SYSTEM ARROWS>;
+        // };
         
         // WE левая фигурная скобка
         combo_left_brace {
@@ -487,18 +297,22 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
             layers = <BASE SYM NUM SYSTEM ARROWS>;
         };
         
-        // combo_lt1_lt0 {
-        //     bindings = <&kp >;
-        //     key-positions = <LT1 LT0>;
-        //     timeout-ms = <20>;
-        // };
+        // RT - знак больше >
+        combo_GREATER_THAN {
+            bindings = <&kp GREATER_THAN>;
+            key-positions = <LT1 LT0>;
+            timeout-ms = <20>;
+            layers = <BASE SYM NUM SYSTEM ARROWS>;
+        };
         
         //// Верхний ряд (справа)
-        // combo_rt0_rt1 {
-        //     bindings = <&kp >;
-        //     key-positions = <RT0 RT1>;
-        //     timeout-ms = <20>;
-        // };
+
+        // YU знак меньше <
+        combo_LESS_THAN {
+            bindings = <&kp LESS_THAN>;
+            key-positions = <RT0 RT1>;
+            timeout-ms = <20>;
+        };
         
         // UI " Двойная кавычка
         combo_DOUBLE_QUOTES {
@@ -514,12 +328,12 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
             timeout-ms = <20>;
         };
         
-        // OP знак больше
-        combo_GREATER_THAN {
-            bindings = <&kp GREATER_THAN>;
-            key-positions = <RT3 RT4>;
-            timeout-ms = <20>;
-        };
+        // OP 
+        // combo_GREATER_THAN {
+        //     bindings = <&kp>;
+        //     key-positions = <RT3 RT4>;
+        //     timeout-ms = <20>;
+        // };
         
         // combo_rt4_rt5 {
         //     bindings = <>;
@@ -534,13 +348,12 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
         //     timeout-ms = <20>;
         // };
         
-        // AS левая квадратная скобка
-        combo_LEFT_BRACKET {
-            bindings = <&kp LEFT_BRACKET>;
-            key-positions = <LM4 LM3>;
-            timeout-ms = <20>;
-            layers = <BASE SYM NUM SYSTEM ARROWS>;
-        };
+        // combo_ {
+        //     bindings = <&kp >;
+        //     key-positions = <LM4 LM3>;
+        //     timeout-ms = <20>;
+        //     layers = <BASE SYM NUM SYSTEM ARROWS>;
+        // };
         
         // SD левая круглая скобка 
         combo_left_parenthesis {
@@ -569,7 +382,7 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
         //// Средний ряд (справа)
 
         // HJ равно
-        combo_rm0_rm1 {
+        combo_EQUAL {
             bindings = <&kp EQUAL>;
             key-positions = <RM0 RM1>;
             timeout-ms = <20>;
@@ -589,12 +402,11 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
             timeout-ms = <20>;
         };
         
-        // L<star> правая квадратная скобка
-        combo_rm3_rm4 {
-            bindings = <&kp RIGHT_BRACKET>;
-            key-positions = <RM3 RM4>;
-            timeout-ms = <20>;
-        };
+        // combo_rm3_rm4 {
+        //     bindings = <&kp >;
+        //     key-positions = <RM3 RM4>;
+        //     timeout-ms = <20>;
+        // };
         
         // звезда и бомба DEL
         combo_del {
@@ -602,7 +414,6 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
             key-positions = <RM4 RM5>;
             timeout-ms = <20>;
         };
-        */
     };
     // Определение раскладки клавиатуры
     keymap {
@@ -632,7 +443,7 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
 //╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮                                            ╭───────────────╮                        ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮
     &kp LT          &kp EXCL        &kp AT          &kp POUND       &kp DOLLAR      &kp PERCENT                                                  &kp LA(LC(E))                            &kp CARET       &kp AMPS        &kp ASTRK       &kp SLASH       &kp BSLH        &kp DEL
 //├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤                            ╭───────────────┼───────────────┼───────────────╮        ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
-    &kp GT          &kp LPAR        &kp LBRC        &kp LBKT        &kp DOT         &kp COLON                                   &kp F13    &kp LA(LC(LG(UP_ARROW))) &kp F14               &kp UNDER       &kp PIPE        &kp EQUAL       &kp SQT         &kp GRAVE       &kp PG_UP
+    &kp GT          &kp LPAR        &kp LBRC        &kp LBKT        &kp DOT         &kp COLON                                   &kp F22    &kp LA(LC(LG(UP_ARROW))) &kp F23               &kp UNDER       &kp PIPE        &kp EQUAL       &kp SQT         &kp GRAVE       &kp PG_UP
 //├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤    ╭───────────────╮       ╰───────────────┼───────────────┼───────────────╯        ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
     &leader1        &kp RPAR        &kp RBRC        &kp RBKT        &kp COMMA       &kp SEMI             &kp C_MUTE                              &kp LA(LC(D))                            &kp MINUS       &kp PLUS        &kp QMARK       &kp DQT         &kp TILDE       &trans
 //╰───────────────┴───────────────┴───────────────┼───────────────┼───────────────┼───────────────┤    ╰───────────────╯                       ╰───────────────╯                        ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────╯
@@ -698,11 +509,11 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
             display-name = "Arrows";
             bindings = <
 //╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮                                            ╭───────────────╮                        ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮
-    &trans          &kp F1          &kp F2          &kp F3          &kp F4          &kp F5                                                       &kp UP                                   &trans          &kp HOME        &kp PAGE_UP     &trans          &trans          &trans
+    &kp F16         &kp F1          &kp F2          &kp F3          &kp F4          &kp F5                                                       &kp UP                                   &trans          &kp HOME        &kp PAGE_UP     &trans          &trans          &trans
 //├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤                            ╭───────────────┼───────────────┼───────────────╮        ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
-    &trans          &kp F6          &kp F7          &kp F8          &kp F9          &kp F10                                      &kp LEFT        &kp ENTER       &kp RIGHT                &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW   &kp RIGHT_ARROW  &trans          &trans
+    &kp F17         &kp F6          &kp F7          &kp F8          &kp F9          &kp F10                                      &kp LEFT        &kp ENTER       &kp RIGHT                &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW   &kp RIGHT_ARROW  &trans          &trans
 //├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤    ╭───────────────╮       ╰───────────────┼───────────────┼───────────────╯        ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
-    &trans          &kp F11         &kp F12         &kp F13         &kp F14         &kp F15              &kp C_MUTE                              &kp DOWN                                 &trans          &kp END         &kp PAGE_DOWN   &trans          &trans          &trans
+    &kp F18         &kp F11         &kp F12         &kp F13         &kp F14         &kp F15              &kp C_MUTE                              &kp DOWN                                 &trans          &kp END         &kp PAGE_DOWN   &trans          &trans          &trans
 //╰───────────────┴───────────────┴───────────────┼───────────────┼───────────────┼───────────────┤    ╰───────────────╯                       ╰───────────────╯                        ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────╯
                                                     &trans          &trans          &trans                                                                                                &trans          &trans          &trans
 //                                                ╰───────────────┴───────────────┴───────────────╯                                                                                     ╰───────────────┴───────────────┴───────────────╯
