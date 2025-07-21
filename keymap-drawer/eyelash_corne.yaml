@@ -24,10 +24,10 @@ layers:
   - Alt+Ctl+$$mdi:arrow-up-bold$$
   - Ctl+Alt+$$mdi:arrow-right-bold$$
   - H
-  - '&hmr LGUI J'
-  - '&hmr LALT K'
-  - '&hmr LCTRL L'
-  - '&hmr LSHFT SEMI'
+  - '&hmr RGUI J'
+  - '&hmr RALT K'
+  - '&hmr RCTRL L'
+  - '&hmr RSHFT SEMI'
   - {t: '''', s: '"'}
   - '&leader1'
   - Z
@@ -195,7 +195,7 @@ layers:
   - '&td_ctrl_spc'
   - {t: '$$mdi:keyboard-return$$', type: enter}
   - Num
-  - $$mdi:apple-keyboard-option$$
+  - RGUI
   Num:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
