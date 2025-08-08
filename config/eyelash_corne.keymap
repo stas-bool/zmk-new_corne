@@ -121,12 +121,12 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
             #binding-cells = <0>;
             r_ws { sequence = <L>; bindings = <&kp LC(LG(RIGHT_ARROW))>; };
             l_ws { sequence = <H>; bindings = <&kp LC(LG(LEFT_ARROW))>; };
-            ctrl_tab_d_seq { sequence = <D>; bindings = <&ctrl_tab_d>; };
+            ctrl_tab_d_seq { sequence = <D B>; bindings = <&ctrl_tab_d>; };
             ws1 { sequence = <Z>; bindings = <&kp LC(N1)>; };
             ws2 { sequence = <X>; bindings = <&kp LC(N2)>; };
 
-            to_arrows { sequence = <A>; bindings = <&to ARROWS>; };
-            arrows_2_base { sequence = <F6>; bindings = <&to BASE>; };
+            to_arrows { sequence = <A R>; bindings = <&to ARROWS>; };
+            arrows_2_base { sequence = <F6 F4>; bindings = <&to BASE>; };
 
             cmd_0 { sequence = <GT>; bindings = <&kp LG(N0)>; };
             cmd_1 { sequence = <LPAR>; bindings = <&kp LG(N1)>; };
@@ -172,8 +172,8 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
         ctrl_tab_d: ctrl_tab_d {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <10>;
-            tap-ms = <10>;
+            wait-ms = <30>;
+            tap-ms = <20>;
             bindings
                 = <&macro_press &kp LCTRL>
                 , <&macro_tap &kp TAB>
@@ -196,10 +196,10 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
             layers = <BASE SYM NUM SYSTEM ARROWS>;
         };
 
-        // CV вставить (C + V)
+        // CV PIPE
         paste {
-            bindings = <&kp LG(V)>;
-            key-positions = <LB1 LB2>;
+            bindings = <&kp PIPE>;
+            key-positions = <LB2 LB1>;
             timeout-ms = <20>;
             layers = <BASE SYM NUM SYSTEM ARROWS>;
         };
@@ -409,11 +409,11 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
         // };
         
         // звезда и бомба DEL
-        combo_del {
-            bindings = <&kp DELETE>;
-            key-positions = <RM4 RM5>;
-            timeout-ms = <20>;
-        };
+        // combo_del {
+        //     bindings = <&kp >;
+        //     key-positions = <RM4 RM5>;
+        //     timeout-ms = <20>;
+        // };
     };
     // Определение раскладки клавиатуры
     keymap {
@@ -443,11 +443,11 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
 //╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮                                            ╭───────────────╮                        ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮
     &kp LT          &kp EXCL        &kp AT          &kp POUND       &kp DOLLAR      &kp PERCENT                                                  &kp LA(LC(E))                            &kp CARET       &kp AMPS        &kp ASTRK       &kp SLASH       &kp BSLH        &kp DEL
 //├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤                            ╭───────────────┼───────────────┼───────────────╮        ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
-    &kp GT          &kp LPAR        &kp LBRC        &kp LBKT        &kp DOT         &kp COLON                                   &kp F18    &kp LA(LC(LG(UP_ARROW))) &kp F19               &kp UNDER       &kp PIPE        &kp EQUAL       &kp SQT         &kp GRAVE       &kp PG_UP
+    &kp GT          &kp LSHFT       &kp LCTRL       &kp LALT        &kp LGUI        &kp COLON                                   &kp F18    &kp LA(LC(LG(UP_ARROW))) &kp F19               &kp UNDER       &kp PIPE        &kp EQUAL       &kp SQT         &kp GRAVE       &kp PG_UP
 //├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤    ╭───────────────╮       ╰───────────────┼───────────────┼───────────────╯        ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
     &leader1        &kp RPAR        &kp RBRC        &kp RBKT        &kp COMMA       &kp SEMI             &kp C_MUTE                              &kp LA(LC(D))                            &kp MINUS       &kp PLUS        &kp QMARK       &kp DQT         &kp TILDE       &trans
 //╰───────────────┴───────────────┴───────────────┼───────────────┼───────────────┼───────────────┤    ╰───────────────╯                       ╰───────────────╯                        ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────╯
-                                                    &trans          &trans          &kp ENTER                                                                                             &kp INS         &kp DEL         &trans
+                                                    &trans          &trans          &kp ENTER                                                                                             &trans          &trans          &trans
 //                                                ╰───────────────┴───────────────┴───────────────╯                                                                                     ╰───────────────┴───────────────┴───────────────╯
             >;
             sensor-bindings = <&inc_dec_kp C_BRIGHTNESS_INC C_BRIGHTNESS_DEC>;
@@ -492,13 +492,13 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
             display-name = "Num";
             bindings = <
 //╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮                                            ╭───────────────╮                        ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮
-    &trans          &trans          &trans          &trans          &trans          &trans                                                       &kp UP                                   &trans          &trans          &trans          &trans          &trans          &kp BSPC
+    &trans          &trans          &trans          &trans          &trans          &trans                                                       &kp UP                                   &trans          &kp C_PREV      &kp C_PP        &kp C_NEXT      &trans          &kp DEL
 //├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤                            ╭───────────────┼───────────────┼───────────────╮        ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
-    &trans          &kp N1          &kp N2          &kp N3          &kp N4          &kp N5                                       &kp LEFT        &kp ENTER       &kp RIGHT                &kp N6          &kp N7          &kp N8          &kp N9          &kp N0          &kp DEL
+    &trans          &kp N1          &kp N2          &kp N3          &kp N4          &kp N5                                       &kp LEFT        &kp ENTER       &kp RIGHT                &kp N6          &kp N7          &kp N8          &kp N9          &kp N0          &trans
 //├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤    ╭───────────────╮       ╰───────────────┼───────────────┼───────────────╯        ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
-    &leader1        &kp N6          &kp N7          &kp N8          &kp N9          &kp N0               &kp C_MUTE                              &kp DOWN                                 &trans          &trans          &trans          &trans          &trans          &trans
+    &leader1        &kp N6          &kp N7          &kp N8          &kp N9          &kp N0               &kp C_MUTE                              &kp DOWN                                 &trans          &trans          &trans          &trans          &kp BACKSLASH   &trans
 //╰───────────────┴───────────────┴───────────────┼───────────────┼───────────────┼───────────────┤    ╰───────────────╯                       ╰───────────────╯                        ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────╯
-                                                    &trans          &to BASE        &trans                                                                                                &kp RET         &trans          &trans
+                                                    &trans          &to BASE        &trans                                                                                                &trans          &trans          &trans
 //                                                ╰───────────────┴───────────────┴───────────────╯                                                                                     ╰───────────────┴───────────────┴───────────────╯
             >;
             sensor-bindings = <&scroll_encoder>;
