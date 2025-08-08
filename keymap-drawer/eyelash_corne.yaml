@@ -64,10 +64,10 @@ layers:
   - {t: \, s: '|'}
   - $$mdi:backspace-reverse-outline$$
   - '>'
-  - (
-  - '{'
-  - {t: '[', s: '{'}
-  - {t: ., s: '>'}
+  - $$mdi:apple-keyboard-shift$$
+  - $$mdi:apple-keyboard-control$$
+  - $$mdi:apple-keyboard-option$$
+  - LGUI
   - ':'
   - F18
   - Alt+Ctl+Gui+$$mdi:arrow-up-bold$$
@@ -95,8 +95,8 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {type: held}
   - {t: '$$mdi:keyboard-return$$', type: enter}
-  - INS
-  - $$mdi:backspace-reverse-outline$$
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   System:
   - '&studio_unlock'
@@ -205,11 +205,11 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - $$mdi:arrow-up-bold$$
   - {t: '$$mdi:transfer$$', type: trans}
+  - $$mdi:skip-previous$$
+  - $$mdi:play-pause$$
+  - $$mdi:skip-next$$
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:backspace$$', type: backspace}
+  - $$mdi:backspace-reverse-outline$$
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '1', s: '!'}
   - {t: '2', s: '@'}
@@ -224,7 +224,7 @@ layers:
   - {t: '8', s: '*'}
   - {t: '9', s: (}
   - {t: '0', s: )}
-  - $$mdi:backspace-reverse-outline$$
+  - {t: '$$mdi:transfer$$', type: trans}
   - '&leader1'
   - {t: '6', s: ^}
   - {t: '7', s: '&'}
@@ -237,12 +237,12 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: \, s: '|'}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: Base, h: toggle}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:keyboard-return$$', type: enter}
+  - {t: '$$mdi:transfer$$', type: trans}
   - {type: held}
   - {t: '$$mdi:transfer$$', type: trans}
   Arrows:
@@ -298,8 +298,8 @@ combos:
 - p: [30, 31]
   k: {t: '`', s: '~'}
   l: [Base, Symbols, Num, System, Arrows]
-- p: [32, 31]
-  k: {t: V, h: '$$mdi:apple-keyboard-command$$'}
+- p: [31, 32]
+  k: '|'
   l: [Base, Symbols, Num, System, Arrows]
 - p: [32, 33]
   k: {t: '[', s: '{'}
@@ -346,5 +346,3 @@ combos:
   k: $
 - p: [24, 25]
   k: )
-- p: [26, 27]
-  k: $$mdi:backspace-reverse-outline$$
