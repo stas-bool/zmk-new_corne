@@ -106,15 +106,15 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
 
 / {
     // Определение условных слоев
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
+    // conditional_layers {
+        // compatible = "zmk,conditional-layers";
 
         // Активация системного слоя при одновременном включении SYM и NUM
-        adjust_layer {
-            if-layers = <SYM NUM>;
-            then-layer = <SYSTEM>;
-        };
-    };
+        // adjust_layer {
+            // if-layers = <SYM NUM>;
+            // then-layer = <SYSTEM>;
+        // };
+    // };
 
     // Определение пользовательских поведений клавиш
     behaviors {
