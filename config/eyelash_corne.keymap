@@ -137,8 +137,8 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
             cmd_4 { sequence = <LGUI>; bindings = <&kp LG(N4)>; };
             cmd_5 { sequence = <COLON>; bindings = <&kp LG(N5)>; };
 
-            to_system { sequence = <E SPACE>; bindings = <&to SYSTEM>; };
-            to_base { sequence = <R SPACE>; bindings = <&to BASE>; };
+            to_system { sequence = <E R>; bindings = <&to SYSTEM>; };
+            to_base { sequence = <R LEFT>; bindings = <&to BASE>; };
         };
         sym_num: sym_num {
             compatible = "zmk,behavior-hold-tap";
@@ -452,7 +452,7 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
 //├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤    ╭───────────────╮       ╰───────────────┼───────────────┼───────────────╯        ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
     &leader1        &kp RPAR        &kp RBRC        &kp RBKT        &kp COMMA       &kp SEMI             &kp C_MUTE                              &kp LA(LC(D))                            &kp MINUS       &kp PLUS        &kp QMARK       &kp DQT         &kp TILDE       &trans
 //╰───────────────┴───────────────┴───────────────┼───────────────┼───────────────┼───────────────┤    ╰───────────────╯                       ╰───────────────╯                        ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────╯
-                                                    &trans          &trans          &kp ENTER                                                                                             &trans          &trans          &trans
+                                                    &trans          &trans          &trans                                                                                                &trans          &trans          &mo SYSTEM
 //                                                ╰───────────────┴───────────────┴───────────────╯                                                                                     ╰───────────────┴───────────────┴───────────────╯
             >;
             sensor-bindings = <&inc_dec_kp C_BRIGHTNESS_INC C_BRIGHTNESS_DEC>;
