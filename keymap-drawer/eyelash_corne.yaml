@@ -99,49 +99,49 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   System:
-  - '&studio_unlock'
-  - F1
-  - F2
-  - F3
-  - F4
-  - F5
+  - {t: '$$mdi:menu-left$$', s: '$$mdi:mouse$$'}
+  - $$mdi:pan-up$$
+  - $$mdi:skip-previous$$
+  - R
+  - $$mdi:arrow-left-bold$$
+  - $$mdi:keyboard-tab$$
   - $$mdi:arrow-up-bold$$
-  - F6
-  - F7
-  - F8
-  - F9
-  - F10
-  - F11
   - {t: '$$mdi:transfer$$', type: trans}
-  - F13
-  - F14
-  - F15
-  - F16
-  - F17
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:menu-down$$', s: '$$mdi:mouse$$'}
+  - {t: '$$mdi:menu-up$$', s: '$$mdi:mouse$$'}
+  - $$mdi:play-pause$$
+  - RETURN
+  - $$mdi:arrow-down-bold$$
+  - $$mdi:arrow-up-bold$$
   - $$mdi:arrow-left-bold$$
   - {t: '$$mdi:keyboard-return$$', type: enter}
   - $$mdi:arrow-right-bold$$
-  - $$mdi:progress-download$$
-  - $$mdi:mouse-left-click-outline$$
-  - $$mdi:mouse-scroll-wheel$$
-  - $$mdi:mouse-right-click-outline$$
-  - $$mdi:printer-outline$$
-  - F12
-  - EP TOG
-  - {t: '$$mdi:backup-restore$$', type: bootloader}
+  - RGB OFF
+  - RGB ON
+  - RGB EFF
   - {t: '$$mdi:transfer$$', type: trans}
-  - $$mdi:progress-download$$
-  - OUT USB
-  - OUT BLE
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:menu-right$$', s: '$$mdi:mouse$$'}
+  - $$mdi:pan-down$$
+  - $$mdi:skip-next$$
+  - $$mdi:mouse-left-click-outline$$
+  - $$mdi:arrow-right-bold$$
+  - $$mdi:keyboard-esc$$
   - $$mdi:volume-off$$
   - $$mdi:arrow-down-bold$$
+  - RGB EFR
+  - RGB SPI
+  - RGB BRI
+  - RGB BRD
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - $$mdi:progress-download$$
-  - {t: '$$mdi:backup-restore$$', type: bootloader}
-  - SLCK
-  - PAUSE BREAK
-  - {t: '$$mdi:transfer$$', type: trans}
+  - '&leader1'
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -297,34 +297,34 @@ layers:
 combos:
 - p: [30, 31]
   k: {t: '`', s: '~'}
-  l: [Base, Symbols, Num, System, Arrows]
+  l: [Base, Symbols, Num, Arrows]
 - p: [31, 32]
   k: '|'
-  l: [Base, Symbols, Num, System, Arrows]
+  l: [Base, Symbols, Num, Arrows]
 - p: [32, 33]
   k: {t: '[', s: '{'}
-  l: [Base, Symbols, Num, System, Arrows]
+  l: [Base, Symbols, Num, Arrows]
 - p: [29, 32]
   k: Gui+Sft+Z
-  l: [Base, Symbols, Num, System, Arrows]
+  l: [Base, Symbols, Num, Arrows]
 - p: [36, 37]
   k: {t: ']', s: '}'}
-  l: [Base, Symbols, Num, System, Arrows]
+  l: [Base, Symbols, Num, Arrows]
 - p: [37, 38]
   k: '&'
-  l: [Base, Symbols, Num, System, Arrows]
+  l: [Base, Symbols, Num, Arrows]
 - p: [38, 39]
   k: '~'
-  l: [Base, Symbols, Num, System, Arrows]
+  l: [Base, Symbols, Num, Arrows]
 - p: [2, 3]
   k: '{'
-  l: [Base, Symbols, Num, System, Arrows]
+  l: [Base, Symbols, Num, Arrows]
 - p: [3, 4]
   k: {t: '''', s: '"'}
-  l: [Base, Symbols, Num, System, Arrows]
+  l: [Base, Symbols, Num, Arrows]
 - p: [4, 5]
   k: '>'
-  l: [Base, Symbols, Num, System, Arrows]
+  l: [Base, Symbols, Num, Arrows]
 - p: [7, 8]
   k: <
 - p: [8, 9]
@@ -333,13 +333,13 @@ combos:
   k: '}'
 - p: [15, 16]
   k: (
-  l: [Base, Symbols, Num, System, Arrows]
+  l: [Base, Symbols, Num, Arrows]
 - p: [16, 17]
   k: ^
-  l: [Base, Symbols, Num, System, Arrows]
+  l: [Base, Symbols, Num, Arrows]
 - p: [17, 18]
   k: {h: '-', s: _}
-  l: [Base, Symbols, Num, System, Arrows]
+  l: [Base, Symbols, Num, Arrows]
 - p: [22, 23]
   k: {t: '=', s: +}
 - p: [23, 24]
