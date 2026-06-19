@@ -4,3 +4,14 @@ modules/
 tools/
 .west/
 .idea
+
+# west-managed project clones (created by local `west update`)
+/zephyr/*
+!/zephyr/module.yml
+nice-view-mod/
+eyelash_corne/
+zmk-adaptive-key/
+zmk-auto-layer/
+zmk-helpers/
+zmk-leader-key/
+zmk-tri-state/
