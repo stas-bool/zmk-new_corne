@@ -15,22 +15,22 @@ manifest:
       revision: v0.2+fix-child-nodes
       import: app/west.yml
     - name: nice-view-mod
-      remote: dsifry 
-      revision: main             
+      remote: dsifry
+      revision: main
     - name: zmk-helpers
       remote: urob
-      revision: main
+      revision: v0.2.1
     - name: zmk-adaptive-key
       remote: urob
-      revision: main
+      revision: v0.2.1
     - name: zmk-auto-layer
       remote: urob
-      revision: main
+      revision: v0.2.1
     - name: zmk-leader-key
       remote: urob
-      revision: main
+      revision: v0.2.1
     - name: zmk-tri-state
       remote: urob
-      revision: main
+      revision: v0.2.1
   self:
     path: config
