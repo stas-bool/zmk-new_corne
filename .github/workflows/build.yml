@@ -7,4 +7,8 @@ on:
 
 jobs:
   build:
-    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
+    # Заморожено на версии до Zephyr 4.1 (c06fa48, 2025-12-10): шаг
+    # `west boards --format "{qualifiers}"` требует HW-model v2 / Zephyr 4.1,
+    # а наш стек на urob/zmk main-3.5 (Zephyr 3.5, HW-model v1).
+    # Снять заморозку — после миграции board на HW-model v2 + перехода на Zephyr 4.1.
+    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@c25e927a2fae

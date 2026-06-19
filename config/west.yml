@@ -12,25 +12,25 @@ manifest:
       revision: main
     - name: zmk
       remote: urob
-      revision: v0.2+fix-child-nodes
+      revision: main-3.5
       import: app/west.yml
     - name: nice-view-mod
       remote: dsifry
       revision: main
     - name: zmk-helpers
       remote: urob
-      revision: v0.2.1
+      revision: v0.3.0
     - name: zmk-adaptive-key
       remote: urob
-      revision: v0.2.1
+      revision: v0.3.0
     - name: zmk-auto-layer
       remote: urob
-      revision: v0.2.1
+      revision: v0.3.0
     - name: zmk-leader-key
       remote: urob
-      revision: v0.2.1
+      revision: v0.3.0
     - name: zmk-tri-state
       remote: urob
-      revision: v0.2.1
+      revision: v0.3.0
   self:
     path: config
