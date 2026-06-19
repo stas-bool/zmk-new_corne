@@ -11,8 +11,8 @@ manifest:
       url: https://github.com/a741725193/zmk-new_corne
       revision: main
     - name: zmk
-      remote: urob
-      revision: main-3.5
+      remote: zmkfirmware
+      revision: main
       import: app/west.yml
     - name: nice-view-mod
       remote: dsifry
