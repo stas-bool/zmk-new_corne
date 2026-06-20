@@ -11,26 +11,26 @@ manifest:
       url: https://github.com/a741725193/zmk-new_corne
       revision: main
     - name: zmk
-      remote: urob
-      revision: v0.2+fix-child-nodes
+      remote: zmkfirmware
+      revision: main
       import: app/west.yml
     - name: nice-view-mod
       remote: dsifry
       revision: main
     - name: zmk-helpers
       remote: urob
-      revision: v0.2.1
+      revision: main
     - name: zmk-adaptive-key
       remote: urob
-      revision: v0.2.1
+      revision: main
     - name: zmk-auto-layer
       remote: urob
-      revision: v0.2.1
+      revision: main
     - name: zmk-leader-key
       remote: urob
-      revision: v0.2.1
+      revision: main
     - name: zmk-tri-state
       remote: urob
-      revision: v0.2.1
+      revision: main
   self:
     path: config
