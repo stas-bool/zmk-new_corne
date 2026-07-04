@@ -141,7 +141,7 @@ layers:
   - RGB BRD
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - '&leader1'
+  - {t: Base, h: toggle}
   - {t: '$$mdi:transfer$$', type: trans}
   - {type: held}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -190,9 +190,9 @@ layers:
   - {t: ., s: '>'}
   - {t: /, s: '?'}
   - {t: Game, h: toggle}
-  - '&td_gui_ret'
-  - $$mdi:apple-keyboard-option$$
-  - '&td_ctrl_spc'
+  - $$mdi:apple-keyboard-shift$$
+  - {t: '$$mdi:keyboard-return$$', type: enter}
+  - $$mdi:keyboard-space$$
   - {t: '$$mdi:keyboard-return$$', type: enter}
   - Num
   - RGUI
