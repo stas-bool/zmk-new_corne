@@ -7,30 +7,34 @@ manifest:
     - name: urob
       url-base: https://github.com/urob
   projects:
+    # Пиннинг к known-good SHA (фикс zmkfirmware/zmk#3207 — central зависал при deep sleep
+    # и не просыпался от клавиш, только reset; + быстрый разряд батареи).
+    # zephyr тянется через import из zmk (ветка v4.1.0+zmk-fixes, уже содержит revert 1d1eb5d).
+    # Прямой override zephyr ломает west zephyr-export, поэтому не делаем.
     - name: eyelash_corne
       url: https://github.com/a741725193/zmk-new_corne
       revision: main
     - name: zmk
       remote: zmkfirmware
-      revision: main
+      revision: 484a0547078228f6957ed164523823e39fbedec4
       import: app/west.yml
     - name: nice-view-mod
       remote: dsifry
-      revision: main
+      revision: 5f328cce749b2760cb61dcac30db29432685af69
     - name: zmk-helpers
       remote: urob
-      revision: main
+      revision: bc114546392b4615ac90a99140eaf21dde31209d
     - name: zmk-adaptive-key
       remote: urob
-      revision: main
+      revision: e5b335a7b1076cb122582f5a892b118b02a3be34
     - name: zmk-auto-layer
       remote: urob
-      revision: main
+      revision: 62c201934711369d50a28df12e1d055d05cb6460
     - name: zmk-leader-key
       remote: urob
-      revision: main
+      revision: e894d9afa5164b7fff641db4194fc3d4d6e84bbb
     - name: zmk-tri-state
       remote: urob
-      revision: main
+      revision: 2007896c6d5bfb519e8babccf8633841c5647d8b
   self:
     path: config
