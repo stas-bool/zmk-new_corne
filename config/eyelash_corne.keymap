@@ -55,21 +55,19 @@ ZMK_TAP_DANCE(td_ctrl_spc, bindings = <&kp LCTRL>, <&kp SPACE>;
               
 // Настройка поведения клавиш home-row mods для левой руки
 ZMK_HOLD_TAP(hml,
-    flavor = "balanced";
-    tapping-term-ms = <200>;
+    flavor = "tap-preferred";
+    tapping-term-ms = <180>;
     require-prior-idle-ms = <QUICK_TAP_MS>;
-    hold-trigger-key-positions = <KEYS_R THUMBS>;
-    hold-trigger-on-release;
+    quick-tap-ms = <QUICK_TAP_MS>;
     bindings = <&kp>, <&kp>;
 )
 
 // Настройка поведения клавиш home-row mods для правой руки
 ZMK_HOLD_TAP(hmr,
-    flavor = "balanced";
-    tapping-term-ms = <200>;
+    flavor = "tap-preferred";
+    tapping-term-ms = <180>;
     require-prior-idle-ms = <QUICK_TAP_MS>;
-    hold-trigger-key-positions = <KEYS_L THUMBS>;
-    hold-trigger-on-release;
+    quick-tap-ms = <QUICK_TAP_MS>;
     bindings = <&kp>, <&kp>;
 )
 
