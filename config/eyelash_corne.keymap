@@ -184,6 +184,24 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
                 , <&macro_release &kp LCTRL>
                 ;
         };
+
+        // ТЕСТ задержки unicode на macOS: эмуляция Unicode Hex Input.
+        // Зажимает Option и «печатает» hex U+2014 (—, em-dash).
+        // Требует активной раскладки "Unicode Hex Input" в macOS
+        // (System Settings → Keyboard → Input Sources → + → Unicode Hex Input).
+        // U+2014 выбран намеренно: только цифры → работает в любой языковой раскладке
+        // (нет hex-букв A-F, которые в RU лежат на других позициях).
+        em_dash_uhi: em_dash_uhi {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            tap-ms = <10>;
+            bindings
+                = <&macro_press &kp LALT>
+                , <&macro_tap &kp N2 &kp N0 &kp N1 &kp N4>
+                , <&macro_release &kp LALT>
+                ;
+        };
     };
               
     combos {
@@ -444,7 +462,7 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
             display-name = "Symbols";
             bindings = <
 //╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮                                            ╭───────────────╮                        ╭───────────────┬───────────────┬───────────────┬───────────────┬───────────────┬───────────────╮
-    &kp LT          &kp EXCL        &kp AT          &kp POUND       &kp DOLLAR      &kp PERCENT                                                  &kp LA(LC(E))                            &kp CARET       &kp AMPS        &kp ASTRK       &kp SLASH       &kp BSLH        &kp DEL
+    &em_dash_uhi    &kp EXCL        &kp AT          &kp POUND       &kp DOLLAR      &kp PERCENT                                                  &kp LA(LC(E))                            &kp CARET       &kp AMPS        &kp ASTRK       &kp SLASH       &kp BSLH        &kp DEL
 //├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤                            ╭───────────────┼───────────────┼───────────────╮        ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
     &kp GT          &kp LSHFT       &kp LCTRL       &kp LALT        &kp LGUI        &kp COLON                                   &kp F18    &kp LA(LC(LG(UP_ARROW))) &kp F19               &kp UNDER       &kp PIPE        &kp EQUAL       &kp SQT         &kp GRAVE       &kp PG_UP
 //├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤    ╭───────────────╮       ╰───────────────┼───────────────┼───────────────╯        ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
