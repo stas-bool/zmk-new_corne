@@ -137,7 +137,7 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
             cmd_4 { sequence = <LGUI>; bindings = <&kp LG(N4)>; };
             cmd_5 { sequence = <COLON>; bindings = <&kp LG(N5)>; };
 
-            to_system { sequence = <E R>; bindings = <&to SYSTEM>; };
+            to_system { sequence = <S>; bindings = <&to SYSTEM>; };
             to_base { sequence = <R LEFT>; bindings = <&to BASE>; };
         };
         sym_num: sym_num {
@@ -469,7 +469,7 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
 //├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤    ╭───────────────╮       ╰───────────────┼───────────────┼───────────────╯        ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
    &mmv MOVE_RIGHT  &msc SCRL_DOWN  &kp C_NEXT      &mkp LCLK       &kp RIGHT       &kp ESC              &kp C_MUTE                              &kp DOWN                                &rgb_ug RGB_EFR  &rgb_ug RGB_SPI &rgb_ug RGB_BRI &rgb_ug RGB_BRD &trans          &trans
 //╰───────────────┴───────────────┴───────────────┼───────────────┼───────────────┼───────────────┤    ╰───────────────╯                       ╰───────────────╯                        ├───────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───────────────╯
-                                                    &leader1        &trans          &trans                                                                                                &trans          &trans          &trans
+                                                    &to BASE        &trans          &trans                                                                                                &trans          &trans          &trans
 //                                                ╰───────────────┴───────────────┴───────────────╯                                                                                     ╰───────────────┴───────────────┴───────────────╯
             >;
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
