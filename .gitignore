@@ -5,6 +5,9 @@ tools/
 .west/
 .idea
 
+# firmware outputs (скачанные/собранные .uf2 артефакты)
+/firmware/
+
 # west-managed project clones (created by local `west update`)
 /zephyr/*
 !/zephyr/module.yml
