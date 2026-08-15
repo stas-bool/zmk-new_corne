@@ -190,7 +190,7 @@ layers:
   - {t: ., s: '>'}
   - {t: /, s: '?'}
   - {t: Game, h: toggle}
-  - $$mdi:apple-keyboard-shift$$
+  - $$mdi:apple-keyboard-control$$
   - {t: '$$mdi:keyboard-return$$', type: enter}
   - $$mdi:keyboard-space$$
   - {t: '$$mdi:keyboard-return$$', type: enter}
